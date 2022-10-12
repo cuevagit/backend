@@ -6,6 +6,7 @@ class Contenedor{
     #title;
     #price;
     #thumbnail;
+ 
 
     constructor(id, title, price, thumbnail) {
         this.id = id;
@@ -16,7 +17,12 @@ class Contenedor{
     
 
     save(id, title, price, thumbnail){
-        productos.push(new Contenedor(id, title, price,thumbnail))
+        this.#id = id;
+        this.#title = title;
+        this.#price = price;
+        this.#thumbnail = thumbnail;
+
+        productos.push(new Contenedor(this.#id, this.#title, this.#price, this.#thumbnail))
     }
 
     getById(id){
