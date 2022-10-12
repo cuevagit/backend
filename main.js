@@ -53,22 +53,23 @@ class Contenedor{
   }
 
 
+  const prodTest = new Contenedor
+  
   console.log('Guarda datos (método save)')
-  const prodPrueba = new Contenedor
-  prodPrueba.save(1, '111', 300, './img/22lr.png')
-  prodPrueba.save(2, '111', 250, './img/308.png')
+  prodTest.save(1, '111', 300, './img/22lr.png')
+  prodTest.save(2, '111', 250, './img/308.png')
   console.log(productos)
 
   console.log('Devuelve el elemento con id')
-  console.log(prodPrueba.getById(2))
+  console.log(prodTest.getById(2))
 
   console.log('Retorno array con todos sus elementos')
-  console.log(prodPrueba.getAll())
+  console.log(prodTest.getAll())
 
   console.log('Elimino producto del array con id=1')
-  prodPrueba.deleteById(1)
+  prodTest.deleteById(1)
   console.log(productos)
 
   console.log('Elimino todos los elementos del array')
-  prodPrueba.deleteAll()
+  prodTest.deleteAll()
   console.log(productos)
