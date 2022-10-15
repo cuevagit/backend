@@ -7,8 +7,7 @@ class Contenedor{
    }
     
 
-    save(id, title, price, thumbnail){
-        let objeto =  { id: id, title: title, price: price, thumbnail: thumbnail };
+    save(objeto){
         this.#productos.push(objeto)
     }
 
@@ -43,8 +42,8 @@ class Contenedor{
   const prodTest = new Contenedor
   
   console.log('Guarda datos (método save)')
-  prodTest.save(1, '111', 300, './img/22lr.png')
-  prodTest.save(2, '111', 250, './img/308.png')
+  prodTest.save({id: 1, title: '111', price: 300, thumbnail: './img/22lr.png'})
+  prodTest.save({id: 2, title: '222', price: 500, thumbnail: './img/308.png'})
 
   console.log('Devuelve el elemento con id')
   console.log(prodTest.getById(2))
