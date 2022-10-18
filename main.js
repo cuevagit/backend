@@ -13,7 +13,7 @@ class Contenedor{
        let id
 
         try {
-            const contenido = JSON.parse(await fs.promises.readFile('./productos.json', 'UTF-8'))
+            const contenido = JSON.parse(await fs.promises.readFile('./productos.txt', 'UTF-8'))
 
             if(contenido) { 
               this.#productos = contenido
@@ -32,7 +32,7 @@ class Contenedor{
 
         try {
             this.#productos.push({id, title, price, thumbnail})
-            await fs.promises.writeFile('./productos.json', JSON.stringify(this.#productos))
+            await fs.promises.writeFile('./productos.txt', JSON.stringify(this.#productos))
             return 'Id del objeto guardado: ' + this.#productos[this.#productos.length - 1].id
         }
         catch(error){
@@ -45,7 +45,7 @@ class Contenedor{
     async getById(id){
        
         try {
-            const contenido = JSON.parse(await fs.promises.readFile('./productos.json', 'UTF-8'))
+            const contenido = JSON.parse(await fs.promises.readFile('./productos.txt', 'UTF-8'))
 
             if(contenido) { 
               this.#productos = contenido
@@ -71,7 +71,7 @@ class Contenedor{
      async getAll(){
 
         try {
-            const contenido = JSON.parse(await fs.promises.readFile('./productos.json', 'UTF-8'))
+            const contenido = JSON.parse(await fs.promises.readFile('./productos.txt', 'UTF-8'))
 
             if(contenido) { 
               this.#productos = contenido
@@ -90,13 +90,13 @@ class Contenedor{
     async deleteById(id){
 
         try {
-            const contenido = JSON.parse(await fs.promises.readFile('./productos.json', 'UTF-8'))
+            const contenido = JSON.parse(await fs.promises.readFile('./productos.txt', 'UTF-8'))
 
             if(contenido) { 
               this.#productos = contenido
 
               try {
-                await fs.promises.writeFile('./productos.json', JSON.stringify(this.#productos.filter(p => p.id !== id)))
+                await fs.promises.writeFile('./productos.txt', JSON.stringify(this.#productos.filter(p => p.id !== id)))
             }
             catch(error){
                 console.log("Hubo un error: " + error)
@@ -119,7 +119,7 @@ class Contenedor{
         this.#productos = []
 
               try {
-                await fs.promises.writeFile('./productos.json', JSON.stringify(this.#productos))
+                await fs.promises.writeFile('./productos.txt', JSON.stringify(this.#productos))
             }
             catch(error){
                 console.log("Hubo un error: " + error)
