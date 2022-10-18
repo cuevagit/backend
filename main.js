@@ -1,3 +1,4 @@
+const fs = require("fs");
 
 class Contenedor{
 
@@ -7,52 +8,161 @@ class Contenedor{
    }
     
 
-    save(objeto){
-        this.#productos.push(objeto)
-    }
+    async save(title, price, thumbnail){
 
-    getById(id){
-      const objetoBuscado = this.#productos.find((p)=>p.id===id)
-      if(objetoBuscado===undefined){
-          return null
-      }else{
-          return objetoBuscado
-      }
-     }
+       let id
 
-     getAll(){
-        return this.#productos
-    }
+        try {
+            const contenido = JSON.parse(await fs.promises.readFile('./productos.json', 'UTF-8'))
 
-    deleteById(id){
-        for (let i=0;i<this.#productos.length;i++){
-            if (this.#productos[i].id===id){
-                this.#productos.splice(i, 1)
+            if(contenido) { 
+              this.#productos = contenido
             }
         }
+
+        catch(error){
+            console.log("El array está vacio aún")
+        } 
+
+        if(this.#productos.length > 0)
+           id = this.#productos[this.#productos.length - 1].id + 1
+        else
+            id = 1
+
+
+        try {
+            this.#productos.push({id, title, price, thumbnail})
+            await fs.promises.writeFile('./productos.json', JSON.stringify(this.#productos))
+            return 'Id del objeto guardado: ' + this.#productos[this.#productos.length - 1].id
+        }
+        catch(error){
+            console.log("Hubo un error: " + error)
+        } 
+
+      }
+
+
+    async getById(id){
+       
+        try {
+            const contenido = JSON.parse(await fs.promises.readFile('./productos.json', 'UTF-8'))
+
+            if(contenido) { 
+              this.#productos = contenido
+            }
+
+            const objetoBuscado = this.#productos.find((p)=>p.id===id)
+
+            if(objetoBuscado===undefined){
+                return null
+            }else{
+                return objetoBuscado;
+            }
+            
+        }
+
+        catch(error){
+            console.log("Hubo un error: " + error)
+        } 
+
+     }
+
+
+     async getAll(){
+
+        try {
+            const contenido = JSON.parse(await fs.promises.readFile('./productos.json', 'UTF-8'))
+
+            if(contenido) { 
+              this.#productos = contenido
+              return this.#productos
+            } else
+              return null
+            }
+
+        catch(error){
+            console.log("Hubo un error: " + error)
+        } 
+
     }
 
-    deleteAll(){
-        this.#productos.splice(0, this.#productos.length+1)
+
+    async deleteById(id){
+
+        try {
+            const contenido = JSON.parse(await fs.promises.readFile('./productos.json', 'UTF-8'))
+
+            if(contenido) { 
+              this.#productos = contenido
+
+              try {
+                await fs.promises.writeFile('./productos.json', JSON.stringify(this.#productos.filter(p => p.id !== id)))
+            }
+            catch(error){
+                console.log("Hubo un error: " + error)
+            } 
+
+
+           } else
+              return null
+            }
+
+        catch(error){
+            console.log("Hubo un error: " + error)
+        } 
+
+
+    }
+
+    async deleteAll(){
+
+        this.#productos = []
+
+              try {
+                await fs.promises.writeFile('./productos.json', JSON.stringify(this.#productos))
+            }
+            catch(error){
+                console.log("Hubo un error: " + error)
+            } 
+
     }
 
   }
 
-
   const prodTest = new Contenedor
+
+    async function ejecutar(){  
+    console.log('Guarda datos (método save)')
+    console.log(await prodTest.save('111', 300, './img/22lr.png'));
+    console.log(await prodTest.save('222', 300, './img/308.png')); 
+    console.log(await prodTest.save('333', 300, './img/22lr.png')); 
+
+    console.log('Retorno array con todos sus elementos')
+    console.log(await prodTest.getAll())
+
+    console.log('Devuelve el elemento con id=2')
+    console.log(await prodTest.getById(2));
+
+    console.log('Elimino producto del array con id=3')
+    await prodTest.deleteById(3)
+    console.log(await prodTest.getAll())
+
+    console.log('Elimino todos los elementos del array')
+    await prodTest.deleteAll()
+    console.log(await prodTest.getAll())
+  }
+
+  ejecutar();
+
   
-  console.log('Guarda datos (método save)')
-  prodTest.save({id: 1, title: '111', price: 300, thumbnail: './img/22lr.png'})
-  prodTest.save({id: 2, title: '222', price: 500, thumbnail: './img/308.png'})
 
-  console.log('Devuelve el elemento con id')
-  console.log(prodTest.getById(2))
 
-  console.log('Retorno array con todos sus elementos')
-  console.log(prodTest.getAll())
 
-  console.log('Elimino producto del array con id=1')
-  prodTest.deleteById(1)
 
-  console.log('Elimino todos los elementos del array')
-  prodTest.deleteAll()
+
+
+
+
+
+
+
