@@ -3,18 +3,21 @@ const fs = require("fs");
 class Contenedor{
 
     #productos;
-    constructor() {
-        this.#productos = []
+    #filename;
+
+    constructor(filename) {
+        this.#productos = [];
+        this.#filename = filename;
    }
-    
+
 
     async save(title, price, thumbnail){
-
+ 
        let id
 
         try {
-            const contenido = JSON.parse(await fs.promises.readFile('./productos.txt', 'UTF-8'))
-
+            const contenido = JSON.parse(await fs.promises.readFile(this.#filename, 'UTF-8'))
+           
             if(contenido) { 
               this.#productos = contenido
             }
@@ -32,7 +35,7 @@ class Contenedor{
 
         try {
             this.#productos.push({id, title, price, thumbnail})
-            await fs.promises.writeFile('./productos.txt', JSON.stringify(this.#productos))
+            await fs.promises.writeFile(this.#filename, JSON.stringify(this.#productos))
             return 'Id del objeto guardado: ' + this.#productos[this.#productos.length - 1].id
         }
         catch(error){
@@ -45,7 +48,7 @@ class Contenedor{
     async getById(id){
        
         try {
-            const contenido = JSON.parse(await fs.promises.readFile('./productos.txt', 'UTF-8'))
+            const contenido = JSON.parse(await fs.promises.readFile(this.#filename, 'UTF-8'))
 
             if(contenido) { 
               this.#productos = contenido
@@ -71,7 +74,7 @@ class Contenedor{
      async getAll(){
 
         try {
-            const contenido = JSON.parse(await fs.promises.readFile('./productos.txt', 'UTF-8'))
+            const contenido = JSON.parse(await fs.promises.readFile(this.#filename, 'UTF-8'))
 
             if(contenido) { 
               this.#productos = contenido
@@ -90,13 +93,13 @@ class Contenedor{
     async deleteById(id){
 
         try {
-            const contenido = JSON.parse(await fs.promises.readFile('./productos.txt', 'UTF-8'))
+            const contenido = JSON.parse(await fs.promises.readFile(this.#filename, 'UTF-8'))
 
             if(contenido) { 
               this.#productos = contenido
 
               try {
-                await fs.promises.writeFile('./productos.txt', JSON.stringify(this.#productos.filter(p => p.id !== id)))
+                await fs.promises.writeFile(this.#filename, JSON.stringify(this.#productos.filter(p => p.id !== id)))
             }
             catch(error){
                 console.log("Hubo un error: " + error)
@@ -119,7 +122,7 @@ class Contenedor{
         this.#productos = []
 
               try {
-                await fs.promises.writeFile('./productos.txt', JSON.stringify(this.#productos))
+                await fs.promises.writeFile(this.#filename, JSON.stringify(this.#productos))
             }
             catch(error){
                 console.log("Hubo un error: " + error)
@@ -129,7 +132,7 @@ class Contenedor{
 
   }
 
-  const prodTest = new Contenedor
+  const prodTest = new Contenedor('productos.txt')
 
     async function ejecutar(){  
     console.log('Guarda datos (método save)')
@@ -147,9 +150,9 @@ class Contenedor{
     await prodTest.deleteById(3)
     console.log(await prodTest.getAll())
 
-    console.log('Elimino todos los elementos del array')
+  /*  console.log('Elimino todos los elementos del array')
     await prodTest.deleteAll()
-    console.log(await prodTest.getAll())
+    console.log(await prodTest.getAll())*/
   }
 
   ejecutar();
