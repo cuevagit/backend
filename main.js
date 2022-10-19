@@ -150,9 +150,12 @@ class Contenedor{
     await prodTest.deleteById(3)
     console.log(await prodTest.getAll())
 
-  /*  console.log('Elimino todos los elementos del array')
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //Esto comentarlo para no eliminar todo, solo descomentarlo en caso de así requerirlo//
+    ///////////////////////////////////////////////////////////////////////////////////////
+    console.log('Elimino todos los elementos del array')
     await prodTest.deleteAll()
-    console.log(await prodTest.getAll())*/
+    console.log(await prodTest.getAll())
   }
 
   ejecutar();
