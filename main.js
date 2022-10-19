@@ -24,7 +24,7 @@ class Contenedor{
         }
 
         catch(error){
-            console.log("El array está vacio aún")
+            throw("El array está vacio aún")
         } 
 
         if(this.#productos.length > 0)
@@ -39,7 +39,7 @@ class Contenedor{
             return 'Id del objeto guardado: ' + this.#productos[this.#productos.length - 1].id
         }
         catch(error){
-            console.log("Hubo un error: " + error)
+            throw("Hubo un error: " + error)
         } 
 
       }
@@ -65,7 +65,7 @@ class Contenedor{
         }
 
         catch(error){
-            console.log("Hubo un error: " + error)
+            throw("Hubo un error: " + error)
         } 
 
      }
@@ -84,7 +84,7 @@ class Contenedor{
             }
 
         catch(error){
-            console.log("Hubo un error: " + error)
+            throw("Hubo un error: " + error)
         } 
 
     }
@@ -102,7 +102,7 @@ class Contenedor{
                 await fs.promises.writeFile(this.#filename, JSON.stringify(this.#productos.filter(p => p.id !== id)))
             }
             catch(error){
-                console.log("Hubo un error: " + error)
+                throw("Hubo un error: " + error)
             } 
 
 
@@ -111,7 +111,7 @@ class Contenedor{
             }
 
         catch(error){
-            console.log("Hubo un error: " + error)
+            throw("Hubo un error: " + error)
         } 
 
 
@@ -125,7 +125,7 @@ class Contenedor{
                 await fs.promises.writeFile(this.#filename, JSON.stringify(this.#productos))
             }
             catch(error){
-                console.log("Hubo un error: " + error)
+                throw("Hubo un error: " + error)
             } 
 
     }
