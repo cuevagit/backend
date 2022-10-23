@@ -11,18 +11,13 @@ class Contenedor{
    }
 
 
-    async save(title, price, thumbnail){
+    async save(objeto){
  
        let id
 
         try {
-            const contenido = JSON.parse(await fs.promises.readFile(this.#filename, 'UTF-8'))
-           
-            if(contenido) { 
-              this.#productos = contenido
-            }
+            this.#productos = await this.getAll()
         }
-
         catch(error){
             throw("El array está vacio aún")
         } 
@@ -34,8 +29,9 @@ class Contenedor{
 
 
         try {
-            this.#productos.push({id, title, price, thumbnail})
-            await fs.promises.writeFile(this.#filename, JSON.stringify(this.#productos))
+            objeto.id = id
+            this.#productos.push(objeto)
+            await fs.promises.writeFile(this.#filename, JSON.stringify(this.#productos, null, 2))
             return 'Id del objeto guardado: ' + this.#productos[this.#productos.length - 1].id
         }
         catch(error){
@@ -48,11 +44,7 @@ class Contenedor{
     async getById(id){
        
         try {
-            const contenido = JSON.parse(await fs.promises.readFile(this.#filename, 'UTF-8'))
-
-            if(contenido) { 
-              this.#productos = contenido
-            }
+            this.#productos = await this.getAll()
 
             const objetoBuscado = this.#productos.find((p)=>p.id===id)
 
@@ -91,30 +83,13 @@ class Contenedor{
 
 
     async deleteById(id){
-
         try {
-            const contenido = JSON.parse(await fs.promises.readFile(this.#filename, 'UTF-8'))
-
-            if(contenido) { 
-              this.#productos = contenido
-
-              try {
-                await fs.promises.writeFile(this.#filename, JSON.stringify(this.#productos.filter(p => p.id !== id)))
-            }
-            catch(error){
-                throw("Hubo un error: " + error)
-            } 
-
-
-           } else
-              return null
-            }
-
+            this.#productos = await this.getAll()
+            await fs.promises.writeFile(this.#filename, JSON.stringify(this.#productos.filter(p => p.id !== id), null, 2))
+        }
         catch(error){
             throw("Hubo un error: " + error)
         } 
-
-
     }
 
     async deleteAll(){
@@ -122,7 +97,7 @@ class Contenedor{
         this.#productos = []
 
               try {
-                await fs.promises.writeFile(this.#filename, JSON.stringify(this.#productos))
+                await fs.promises.writeFile(this.#filename, JSON.stringify(this.#productos), null, 2)
             }
             catch(error){
                 throw("Hubo un error: " + error)
@@ -136,26 +111,26 @@ class Contenedor{
 
     async function ejecutar(){  
     console.log('Guarda datos (método save)')
-    console.log(await prodTest.save('111', 300, './img/22lr.png'));
-    console.log(await prodTest.save('222', 300, './img/308.png')); 
-    console.log(await prodTest.save('333', 300, './img/22lr.png')); 
+    console.log(await prodTest.save({title: '111', price: 300, thumbnail: './img/22lr.png'}));
+    console.log(await prodTest.save({title: '222', price: 400, thumbnail: './img/308.png'})); 
+    console.log(await prodTest.save({title: '333', price: 500, thumbnail: './img/1270.png'})); 
 
     console.log('Retorno array con todos sus elementos')
     console.log(await prodTest.getAll())
 
-    console.log('Devuelve el elemento con id=2')
-    console.log(await prodTest.getById(2));
+    console.log('Devuelve el elemento con id=1')
+    console.log(await prodTest.getById(1));
 
-    console.log('Elimino producto del array con id=3')
-    await prodTest.deleteById(3)
+    console.log('Elimino producto del array con id=2')
+    await prodTest.deleteById(2)
     console.log(await prodTest.getAll())
 
     ///////////////////////////////////////////////////////////////////////////////////////
     //Esto comentarlo para no eliminar todo, solo descomentarlo en caso de así requerirlo//
     ///////////////////////////////////////////////////////////////////////////////////////
-   // console.log('Elimino todos los elementos del array')
-   // await prodTest.deleteAll()
-   // console.log(await prodTest.getAll())
+    //console.log('Elimino todos los elementos del array')
+    //await prodTest.deleteAll()
+    //console.log(await prodTest.getAll())
   }
 
   ejecutar();

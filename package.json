@@ -1,0 +1,22 @@
+{
+  "name": "pagina",
+  "version": "1.0.0",
+  "description": "Curso Backend",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cuevagit/backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cuevagit/backend/issues"
+  },
+  "homepage": "https://github.com/cuevagit/backend#readme",
+  "dependencies": {
+    "moment": "^2.29.4"
+  }
+}
