@@ -140,6 +140,7 @@ class Contenedor{
   module.exports = { conectar }
 
 
+  //FUNCIÓN PARA CARGAR DATOS
     async function ejecutar() {  
         console.log('Guarda datos (método save)')
         console.log(await prodTest.save({title: 'Balas Calibre 22lr', price: 300, thumbnail: './img/22lr.png'}));
