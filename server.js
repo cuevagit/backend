@@ -118,6 +118,10 @@ class Contenedor{
     return Math.floor(Math.random()*3) + 1
   }
 
+  servidor.get('/', async (peticion, respuesta) => {
+    respuesta.send('<h1>Bienvenido al Tercer Desafío de Backend</h1>')
+})
+
    servidor.get('/productos', async (peticion, respuesta) => {
        respuesta.send(await prodTest.getAll())
   })
