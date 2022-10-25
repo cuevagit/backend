@@ -23,7 +23,7 @@ class Contenedor{
             this.#productos = await this.getAll()
         } 
         catch (error){
-           // throw(error)
+            throw("El archivo no existe o está vacío")
         } 
 
         if(this.#productos.length > 0)
