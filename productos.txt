@@ -1,20 +1,20 @@
 [
   {
-    "title": "Balas Calibre 22lr",
-    "price": 300,
-    "thumbnail": "./img/22lr.png",
-    "id": 1
-  },
-    {
-    "title": "Balas Calibre 308",
-    "price": 400,
-    "thumbnail": "./img/308.png",
-    "id": 2
+    "title": "Rifle 22 Lr",
+    "price": "3200",
+    "thumbnail": "/img/22lr.png",
+    "id": "4c9e8153-036e-4c98-91b7-69853db4beed"
   },
   {
-    "title": "Cartuchos Calibre 1270",
-    "price": 500,
-    "thumbnail": "./img/1270.png",
-    "id": 3
+    "title": "Fusil 308",
+    "price": "4000",
+    "thumbnail": "/img/308.png",
+    "id": "94123faf-03af-4c0b-b72a-96b3fc5a1606"
+  },
+  {
+    "title": "Escopeta 12/85",
+    "price": "5000",
+    "thumbnail": "/img/1270.png",
+    "id": "613610cc-1f4c-46aa-8343-319a181e2903"
   }
 ]
