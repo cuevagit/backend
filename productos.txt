@@ -16,5 +16,11 @@
     "price": "5000",
     "thumbnail": "/img/1270.png",
     "id": "613610cc-1f4c-46aa-8343-319a181e2903"
+  },
+  {
+    "title": "probar",
+    "price": "10",
+    "thumbnail": "imagen",
+    "id": "252d8540-8ed3-485c-83f9-5cd99bd30849"
   }
 ]

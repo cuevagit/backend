@@ -38,7 +38,6 @@ async function controladorPutProductosSegunId({ body, params: { id } }, res) {
         productos[indiceBuscado] = body;
 
         try {
-            //objeto.id = id
             await fs.promises.writeFile('productos.txt', JSON.stringify(productos, null, 2))
         }
         catch(error){
@@ -58,10 +57,8 @@ async function controladorDeleteProductosSegunId({ params: { id } }, res) {
         res.json({ mensaje: `no se encontró producto con ese id (${id})` });
     } else {
         const borrados = productos.splice(indiceBuscado, 1);
-        // res.sendStatus(204)
 
         try {
-            //objeto.id = id
             await fs.promises.writeFile('productos.txt', JSON.stringify(productos, null, 2))
         }
         catch(error){
