@@ -13,17 +13,6 @@ const servidor = express()
   servidor.use('/views', express.static('views'))
 
 
-  function getAleatorio() {
-    return Math.floor(Math.random()*3) + 1
-  }
-
-  function controladorproductosRandom(req, res){
-    res.send(prodTest.getById(getAleatorio()))
-  }
-   servidor.get('/api/productosRandom', async (peticion, respuesta) => {
-    respuesta.send(await prodTest.getById(getAleatorio()))
-  })
-
 
   function conectar(puerto = 0) {
     return new Promise((resolve, reject) => {
