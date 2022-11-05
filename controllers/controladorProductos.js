@@ -74,6 +74,8 @@ function controladorproductosRandom(req, res){
     res.send(prodTest.getById(randomUUID()))
 }
 
+
+
 exports.controladorGetProductos = controladorGetProductos;
 exports.controladorPostProductos = controladorPostProductos;
 exports.controladorGetProductosSegunId = controladorGetProductosSegunId;

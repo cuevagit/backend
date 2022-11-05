@@ -5,13 +5,15 @@ const { routerWeb } = require("./routers/routerWeb.js")
 
 const servidor = express()
 
+  //Middlewares para resolver los datos que viene por el Post
+  //Si viene por un Json o si viene de un formulario (Form)
   servidor.use(express.json())
   servidor.use(express.urlencoded({ extended: true }))
 
+  //Middlewares para los routers
   servidor.use('/api/productos', routerApi)
   servidor.use('/', routerWeb)
   servidor.use('/views', express.static('views'))
-
 
 
   function conectar(puerto = 0) {
