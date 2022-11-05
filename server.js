@@ -17,7 +17,7 @@ const servidor = express()
   function conectar(puerto = 0) {
     return new Promise((resolve, reject) => {
         const servidorConectado = servidor.listen(puerto, () => {
-            resolve(servidorConectador)
+            resolve(servidorConectado)
         })
         servidorConectado.on("error", error => reject(error))
     })
