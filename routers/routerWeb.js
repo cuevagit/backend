@@ -9,7 +9,6 @@ const routerWeb = express.Router();
 routerWeb.get('/', controladorWeb);
 routerWeb.get('/productos', controladorWebListadoProductos);
 routerWeb.post('/productos', controladorPostWebProductos);
-routerWeb.post('/productos', controladorPostWebProductos);
 
 
 exports.routerWeb = routerWeb;
