@@ -19,7 +19,7 @@ class Contenedor{
             this.#productos = await this.getAll()
         } 
         catch (error){
-            throw("El archivo no existe o está vacío")
+            error => { throw error}
         } 
 
         try {
@@ -28,7 +28,7 @@ class Contenedor{
             return 'Id del objeto guardado: ' + this.#productos[this.#productos.length - 1].id
         }
         catch(error){
-            throw("Hubo un error: " + error)
+            error => { throw error}
         } 
 
       }
@@ -50,7 +50,7 @@ class Contenedor{
         }
 
         catch(error){
-            throw("Hubo un error: " + error)
+            error => { throw error}
         } 
 
      }
@@ -70,7 +70,7 @@ class Contenedor{
             }
 
         catch(error){
-            throw("Hubo un error: " + error)
+            error => { throw error}
         } 
 
     }
@@ -83,7 +83,7 @@ class Contenedor{
             return this.#productos.filter(p => p.id == id)
         }
         catch(error){
-            throw("Hubo un error: " + error)
+            error => { throw error}
         } 
     }
 
@@ -95,7 +95,7 @@ class Contenedor{
                 await fs.promises.writeFile(this.#filename, JSON.stringify(this.#productos), null, 2)
             }
             catch(error){
-                throw("Hubo un error: " + error)
+                error => { throw error}
             } 
 
     }
@@ -106,7 +106,7 @@ class Contenedor{
             return objeto;
         }
         catch(error){
-            throw("Hubo un error: " + error)
+            error => { throw error}
         } 
     }
 
