@@ -22,11 +22,5 @@
     "price": "2500",
     "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620",
     "id": "e224092d-7e2a-432a-a227-0b8e9929740d"
-  },
-  {
-    "title": "prueba",
-    "price": "44",
-    "thumbnail": "https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/12_avatar-256.png",
-    "id": "f3f8072a-2dcb-4300-b0ab-29bc4e7d52f2"
   }
 ]
