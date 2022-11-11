@@ -23,7 +23,6 @@ class Contenedor{
         } 
 
         try {
-            //objeto.id = id
             this.#productos.push(objeto)
             await fs.promises.writeFile(this.#filename, JSON.stringify(this.#productos, null, 2))
             return 'Id del objeto guardado: ' + this.#productos[this.#productos.length - 1].id
@@ -81,6 +80,7 @@ class Contenedor{
         try {
             this.#productos = await this.getAll()
             await fs.promises.writeFile(this.#filename, JSON.stringify(this.#productos.filter(p => p.id !== id), null, 2))
+            return this.#productos.filter(p => p.id == id)
         }
         catch(error){
             throw("Hubo un error: " + error)
@@ -98,6 +98,16 @@ class Contenedor{
                 throw("Hubo un error: " + error)
             } 
 
+    }
+
+    async update(objeto){
+        try {
+            await fs.promises.writeFile(this.#filename, JSON.stringify(objeto, null, 2))
+            return objeto;
+        }
+        catch(error){
+            throw("Hubo un error: " + error)
+        } 
     }
 
   }

@@ -4,18 +4,19 @@ const fs = require("fs");
 
 const prodTest = new Contenedor('productos.txt')
 
-function controladorPostProductos(req, res) {
+async function controladorPostProductos(req, res) {
     res.status(201);
     const objeto = req.body;
     objeto.id = randomUUID();
-    prodTest.save(objeto);
-    res.json(objeto)
+    await prodTest.save(objeto);
+    res.render('formulario');
 }
 
 async function controladorGetProductos(req, res) {
     const productos = await prodTest.getAll();
-    res.json(productos);
-    }
+
+    res.render('listado', {productos, hayProductos: productos? productos.length : null}) 
+}
 
 async function controladorGetProductosSegunId({ params: { id } }, res) {
     const productos = await prodTest.getAll();
@@ -35,14 +36,10 @@ async function controladorPutProductosSegunId({ body, params: { id } }, res) {
         res.status(404);
         res.json({ mensaje: `no se encontró producto con ese id (${id})` });
     } else {
+        body.id = id;
         productos[indiceBuscado] = body;
 
-        try {
-            await fs.promises.writeFile('productos.txt', JSON.stringify(productos, null, 2))
-        }
-        catch(error){
-            throw("Hubo un error: " + error)
-        } 
+        await prodTest.update(productos);
 
         res.json(body);
     }
@@ -56,15 +53,7 @@ async function controladorDeleteProductosSegunId({ params: { id } }, res) {
         res.status(404);
         res.json({ mensaje: `no se encontró producto con ese id (${id})` });
     } else {
-        const borrados = productos.splice(indiceBuscado, 1);
-
-        try {
-            await fs.promises.writeFile('productos.txt', JSON.stringify(productos, null, 2))
-        }
-        catch(error){
-            throw("Hubo un error: " + error)
-        } 
-
+        const borrados = await prodTest.deleteById(id);
         res.json(borrados[0]);
     }
 }

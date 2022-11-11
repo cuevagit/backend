@@ -1,0 +1,29 @@
+<h2 style="color:rgb(122, 116, 117);">Listado de Productos</h2>
+
+{{#if hayProductos}}
+<div class="table-responsive">
+    <table class="table table-striped table-bordered table-secondary">
+        <tr style="color: rgb(16, 17, 36);">
+            <th>Nombre del Producto</th>
+            <th>Precio</th>
+            <th>Imágen</th>
+        </tr>
+        {{#each productos}}
+        <tr>
+            <td>
+                {{this.title}}
+            </td>
+            <td>
+                {{this.price}}
+            </td>
+            <td>
+                <img width="70px" src={{this.thumbnail}} alt="Imagen producto"/>
+            </td>
+        </tr>
+        {{/each}}
+    </table>
+</div>
+{{else}}
+<h3 class="alert alert-light">No se encontraron productos</h3>
+{{/if}}
+    <button class="btn btn-success mt-3 mb-5" onclick="location.href='http://localhost:8080/'">Agregar Producto</button>

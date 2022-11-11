@@ -1,6 +1,11 @@
+const { Contenedor } = require("../container/container.js")
 
-function controladorWeb(req, res) {
-    res.send('<h1>Bienvenido al Curso de Backend</h1>')
+const prodTest = new Contenedor('productos.txt')
+
+ function controladorWeb(req, res) {
+    res.render('formulario');
 }
 
+
 exports.controladorWeb = controladorWeb;
+
