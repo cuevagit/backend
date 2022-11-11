@@ -14,6 +14,7 @@ class Contenedor{
     async save(objeto){
  
         try {
+           if(await this.getAll())
             this.#productos = await this.getAll()
         } 
         catch (error){
