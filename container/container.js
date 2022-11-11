@@ -13,8 +13,6 @@ class Contenedor{
 
     async save(objeto){
  
-       let id
-
         try {
             this.#productos = await this.getAll()
         } 
