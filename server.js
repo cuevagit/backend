@@ -12,7 +12,6 @@ const { engine } = require('express-handlebars')  //handlebars
   servidor.use(express.urlencoded({ extended: true }))
 
   //Middlewares para los routers
-  //servidor.use('/api/productos', routerApi)
   servidor.use('/api/productos', routerApi)
   servidor.use('/', routerWeb)
   servidor.use('/views', express.static('views'))
