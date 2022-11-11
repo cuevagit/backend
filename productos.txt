@@ -22,5 +22,11 @@
     "price": "2500",
     "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620",
     "id": "e224092d-7e2a-432a-a227-0b8e9929740d"
+  },
+  {
+    "title": "probar",
+    "price": "10",
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/12_avatar-256.png",
+    "id": "4b47bfab-a650-4d1f-bae5-99f7a48c3210"
   }
 ]

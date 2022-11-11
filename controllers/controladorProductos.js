@@ -9,13 +9,12 @@ async function controladorPostProductos(req, res) {
     const objeto = req.body;
     objeto.id = randomUUID();
     await prodTest.save(objeto);
-    res.render('formulario');
+    res.json(objeto)
 }
 
 async function controladorGetProductos(req, res) {
     const productos = await prodTest.getAll();
-
-    res.render('listado', {productos, hayProductos: productos? productos.length : null}) 
+    res.json(productos);
 }
 
 async function controladorGetProductosSegunId({ params: { id } }, res) {
@@ -38,9 +37,7 @@ async function controladorPutProductosSegunId({ body, params: { id } }, res) {
     } else {
         body.id = id;
         productos[indiceBuscado] = body;
-
         await prodTest.update(productos);
-
         res.json(body);
     }
 }

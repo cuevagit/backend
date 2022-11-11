@@ -13,7 +13,7 @@ const { engine } = require('express-handlebars')  //handlebars
 
   //Middlewares para los routers
   //servidor.use('/api/productos', routerApi)
-  servidor.use('/productos', routerApi)
+  servidor.use('/api/productos', routerApi)
   servidor.use('/', routerWeb)
   servidor.use('/views', express.static('views'))
 
