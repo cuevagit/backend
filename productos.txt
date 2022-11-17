@@ -22,5 +22,11 @@
     "price": "2500",
     "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620",
     "id": "e224092d-7e2a-432a-a227-0b8e9929740d"
+  },
+  {
+    "title": "Cartuchos 20/70",
+    "price": "2000",
+    "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620",
+    "id": "9a8d1c67-47eb-4035-9a95-066fdf5f6c50"
   }
 ]

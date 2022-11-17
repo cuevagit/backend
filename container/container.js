@@ -18,6 +18,7 @@ class Contenedor{
             this.#productos = await this.getAll()
         } 
         catch (error){
+            this.#productos = [];
             error => { throw error}
         } 
 

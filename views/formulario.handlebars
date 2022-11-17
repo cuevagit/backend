@@ -1,25 +1,43 @@
 <h1 style="color:rgb(156, 156, 196);">Ingrese datos del producto</h1>
 <br>
 
-<form action="/productos" method="post">
+<form id="formulario" action="/productos" method="post">
 
     <div class="form-group">
         <label for="title"><b>Nombre del Producto: </b></label>
-        <input id="title" class="form-control" type="text" name="title">
+        <input id="title" class="form-control" type="text" name="title" style="width:500px">
     </div>
 
     <div class="form-group">
         <label for="price"><b>Precio: </b></label>
-        <input id="price" class="form-control" type="text" name="price">
+        <input id="price" class="form-control" type="text" name="price" style="width:500px">
     </div>
 
     <div class="form-group">
         <label for="thumbnail"><b>Imágen: </b></label>
-        <input id="thumbnail" class="form-control" type="text" name="thumbnail">
+        <input id="thumbnail" class="form-control" type="text" name="thumbnail" style="width:500px">
     </div>
 
   
-    <button class="btn btn-success mt-3 mb-5" onclick="location.href='http://localhost:8080/'">Enviar</button>
+    <button id="enviar" class="btn btn-success mt-3 mb-5" type="submit">Enviar</button>
+
+    <span id="chat" style="position: absolute; margin-top: -310px; margin-left: 600px;">
+        <h1>CHAT</h1>
+        <h5>Nombre: <input id="nombre" type="text"> </h5>
+        <h5>Mensaje: <input id="mensaje" type="text"> </h5>
+        <button id="enviarchat" type="button" >Enviar</button>
+        <br><br>
+        <div id="mensajesChat">
+
+        </div>
+    </span>
+    
+    <script src="js/index.js"></script>
 
 </form>
-    <button class="btn btn-success mt-3 mb-5" onclick="location.href='http://localhost:8080/productos'">Ver Productos</button>
+    <table id="parrafo" class="table table-striped table-bordered table-secondary">
+
+      <button class="btn btn-success mt-3 mb-5" onclick="location.href='http://localhost:8080/productos/'">Ver Productos</button>
+
+
+
