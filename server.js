@@ -48,7 +48,7 @@ io.on('connection', (socket) => {
 
   socket.on('mensajesChat', data => {
     mensajesChat.push({ socketid: socket.id, mensajesChat: data })
-    io.sockets.emit('mensajesChatActualizados', `<strong>${data.nombre}<strong/>`  + ": " + data.mensaje);
+    io.sockets.emit('mensajesChatActualizados', `<strong>${data.nombre}</strong>`  + ": " + data.mensaje);
   })
 
 })

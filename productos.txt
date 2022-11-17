@@ -28,5 +28,17 @@
     "price": "2000",
     "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620",
     "id": "9a8d1c67-47eb-4035-9a95-066fdf5f6c50"
+  },
+  {
+    "title": "",
+    "price": "",
+    "thumbnail": "",
+    "id": "cf9fb2ac-29c8-47ea-8e59-f041efbf74f4"
+  },
+  {
+    "title": "",
+    "price": "",
+    "thumbnail": "",
+    "id": "7e1ec93d-9d48-4a3e-a353-186bcde7af4c"
   }
 ]
