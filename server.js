@@ -25,6 +25,7 @@ servidor.use(express.static('public'))
 servidor.engine('handlebars', engine())
 servidor.set('view engine', 'handlebars')
 
+const puerto = process.env.PORT ?? 8080
 
 function conectar(puerto = 0) {
   return new Promise((resolve, reject) => {
