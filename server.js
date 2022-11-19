@@ -36,16 +36,15 @@ function conectar(puerto = 0) {
 
 io.on('connection', (socket) => {
   // "connection" se ejecuta la primera vez que se abre una nueva conexión
-  //console.log('Usuario conectado')
 
 
   socket.on('mensajes', data => {
-    const mensajes = { socketid: socket.id, mensaje: data }
+    data.socketid = socket.id
     io.sockets.emit('mensajesActualizados', `<tr><td>${data.title}</td> <td>${data.price}</td> <td><img width="70px" src=${data.thumbnail} alt="Imagen producto"/></td><tr>`);
   })
 
   socket.on('mensajesChat', data => {
-    const mensajesChat = { socketid: socket.id, mensajesChat: data }
+    data.socketid = socket.id 
     io.sockets.emit('mensajesChatActualizados', `${data.fecha} - <strong>${data.nombre}</strong>`  + ": " + data.mensaje);
   })
 
