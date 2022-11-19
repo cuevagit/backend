@@ -28,23 +28,5 @@
     "price": "2000",
     "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620",
     "id": "9a8d1c67-47eb-4035-9a95-066fdf5f6c50"
-  },
-  {
-    "title": "probar",
-    "price": "211",
-    "thumbnail": "https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/12_avatar-256.png",
-    "id": "f912ef52-7148-4c99-bb24-532bcb474ab8"
-  },
-  {
-    "title": "Cartuchos 20/70",
-    "price": "2000",
-    "thumbnail": "https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/12_avatar-256.png",
-    "id": "3cc8bf2a-5c81-4de3-a7aa-c011fc35040d"
-  },
-  {
-    "title": "probar",
-    "price": "2000",
-    "thumbnail": "https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/12_avatar-256.png",
-    "id": "63c402bf-db22-4f4d-b6b4-393932d501d5"
   }
 ]
