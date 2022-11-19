@@ -36,7 +36,6 @@ form.addEventListener('submit', (e) => {
 
 socket.on('mensajesActualizados', mensaje => {
    document.getElementById('parrafo').insertAdjacentHTML('beforeend', `<div id="message">${mensaje}</div>`);
-   //document.getElementById('parrafo').innerHTML = mensaje;
 });
 
 const botonchat = document.getElementById("enviarchat")
@@ -46,16 +45,17 @@ const botonchat = document.getElementById("enviarchat")
 
 socket.on('mensajesChatActualizados', mensajesChat => {
   document.getElementById('mensajesChat').insertAdjacentHTML('beforeend', `<div id="messagesChat">${mensajesChat}</div>`);
- // document.getElementById('parrafo').innerHTML = mensaje
 });
  
 botonchat.onclick = (e) => {
   e.preventDefault();
   
+  const fecha = new Date().toLocaleString()
   const nombre = document.getElementById('nombre').value
   const mensaje = document.getElementById('mensaje').value
 
   const mensajesChat = {
+    fecha: fecha,
     nombre: nombre,
     mensaje: mensaje  
   }

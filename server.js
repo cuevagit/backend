@@ -38,17 +38,15 @@ io.on('connection', (socket) => {
   // "connection" se ejecuta la primera vez que se abre una nueva conexión
   //console.log('Usuario conectado')
 
-  mensajes = []
-  mensajesChat = []
 
   socket.on('mensajes', data => {
-    mensajes.push({ socketid: socket.id, mensaje: data })
+    const mensajes = { socketid: socket.id, mensaje: data }
     io.sockets.emit('mensajesActualizados', `<tr><td>${data.title}</td> <td>${data.price}</td> <td><img width="70px" src=${data.thumbnail} alt="Imagen producto"/></td><tr>`);
   })
 
   socket.on('mensajesChat', data => {
-    mensajesChat.push({ socketid: socket.id, mensajesChat: data })
-    io.sockets.emit('mensajesChatActualizados', `<strong>${data.nombre}</strong>`  + ": " + data.mensaje);
+    const mensajesChat = { socketid: socket.id, mensajesChat: data }
+    io.sockets.emit('mensajesChatActualizados', `${data.fecha} - <strong>${data.nombre}</strong>`  + ": " + data.mensaje);
   })
 
 })
