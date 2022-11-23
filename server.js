@@ -4,6 +4,8 @@ const { routerWeb } = require("./routers/routerWeb.js")
 const { engine } = require('express-handlebars')  //handlebars
 const { Server: HttpServer } = require('http')
 const { Server: IOServer } = require('socket.io')
+const { Contenedor } = require("./container/container.js")
+const { ContenedorChat } = require("./container/containerChat.js")
 
 const servidor = express()
 const httpServer = new HttpServer(servidor)
@@ -35,9 +37,26 @@ function conectar(puerto = 0) {
   })
 }
 
-io.on('connection', (socket) => {
-  // "connection" se ejecuta la primera vez que se abre una nueva conexión
+const contenedor = new Contenedor('productos.txt')
+const contenedorChat = new ContenedorChat('chat.txt')
 
+io.on('connection', async(socket) => {
+  // "connection" se ejecuta la primera vez que se abre una nueva conexión
+ const productos = await contenedor.getAll();
+ if(productos){ 
+ socket.emit(productos);
+ productos.forEach(p => {
+  socket.emit('mensajesActualizados', `<tr><td>${p.title}</td> <td>${p.price}</td> <td><img width="70px" src=${p.thumbnail} alt="Imagen producto"/></td><tr>`);
+ });
+}
+
+ const chat = await contenedorChat.getAll();
+ if(chat){ 
+ socket.emit(chat);
+ chat.forEach(c => {
+ socket.emit('mensajesChatActualizados', `<strong style="color: blue">${c.email}</strong> - [<h15 style="color: brown"> ${c.fecha}</h15>]: <h15 style="color: green; font-family: italic"> ${c.mensaje}</h15>`);
+});
+}
 
   socket.on('mensajes', data => {
     data.socketid = socket.id
@@ -46,7 +65,7 @@ io.on('connection', (socket) => {
 
   socket.on('mensajesChat', data => {
     data.socketid = socket.id 
-    io.sockets.emit('mensajesChatActualizados', `${data.fecha} - <strong>${data.nombre}</strong>`  + ": " + data.mensaje);
+    io.sockets.emit('mensajesChatActualizados', `<strong style="color: blue">${data.email}</strong> - [<h15 style="color: brown"> ${data.fecha}</h15>]: <h15 style="color: green; font-family: italic"> ${data.mensaje}</h15>`);
   })
 
 })

@@ -25,7 +25,7 @@ form.addEventListener('submit', (e) => {
   socket.emit('mensajes', mensajes);
   form.reset();
 
-  fetch('http://localhost:8080/productos/', {
+  fetch('http://localhost:8080/api/productos/', {
     method: "POST",
     body: JSON.stringify(mensajes),
     headers: {"Content-type": "application/json; charset=UTF-8"}
@@ -51,16 +51,22 @@ botonchat.onclick = (e) => {
   e.preventDefault();
   
   const fecha = new Date().toLocaleString()
-  const nombre = document.getElementById('nombre').value
+  const email = document.getElementById('email').value
   const mensaje = document.getElementById('mensaje').value
 
   const mensajesChat = {
     fecha: fecha,
-    nombre: nombre,
+    email: email,
     mensaje: mensaje  
   }
 
   socket.emit('mensajesChat', mensajesChat);
   form.reset();
+
+  fetch('http://localhost:8080/api/productos/chat', {
+    method: "POST",
+    body: JSON.stringify(mensajesChat),
+    headers: {"Content-type": "application/json; charset=UTF-8"}
+  })
 
 }
