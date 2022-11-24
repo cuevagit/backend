@@ -1,56 +1,8 @@
 [
   {
-    "title": "Rifle 22 LR",
-    "price": "3200",
-    "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/22lr.png?v=1667991968037",
-    "id": "4c9e8153-036e-4c98-91b7-69853db4beed"
-  },
-  {
-    "title": "Balas Calibre 308",
-    "price": "4000",
-    "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/308.png?v=1667992878948",
-    "id": "94123faf-03af-4c0b-b72a-96b3fc5a1606"
-  },
-  {
-    "title": "Escopeta 12/70",
-    "price": "5000",
-    "thumbnail": "/img/1270.png",
-    "id": "613610cc-1f4c-46aa-8343-319a181e2903"
-  },
-  {
-    "title": "Fusil 308",
-    "price": "2500",
-    "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620",
-    "id": "e224092d-7e2a-432a-a227-0b8e9929740d"
-  },
-  {
     "title": "Cartuchos 20/70",
     "price": "2000",
-    "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620",
-    "id": "9a8d1c67-47eb-4035-9a95-066fdf5f6c50"
-  },
-  {
-    "title": "probar2",
-    "price": "2000",
-    "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/2070.png?v=1668203193218",
-    "id": "48e6f2b8-dc88-4e0b-afc4-0b658b3cdde5"
-  },
-  {
-    "title": "prueba2023",
-    "price": "211",
-    "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620",
-    "id": "32c448d6-a7c4-46ba-9ed5-97ee7c8577f5"
-  },
-  {
-    "title": "hoynov",
-    "price": "1550",
     "thumbnail": "https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/12_avatar-256.png",
-    "id": "8c311679-83e2-4253-9673-c765a2c77032"
-  },
-  {
-    "title": "probar",
-    "price": "2000",
-    "thumbnail": "https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/12_avatar-256.png",
-    "id": "b4ea68ba-07b1-4671-8903-8bbad67daba6"
+    "id": "35e4245a-6383-4cb5-bbd5-b99b1bc5a62e"
   }
 ]

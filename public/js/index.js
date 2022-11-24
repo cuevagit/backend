@@ -25,7 +25,7 @@ form.addEventListener('submit', (e) => {
   socket.emit('mensajes', mensajes);
   form.reset();
 
-  fetch('http://localhost:8080/api/productos/', {
+  fetch('http://localhost:8080/productos/', {
     method: "POST",
     body: JSON.stringify(mensajes),
     headers: {"Content-type": "application/json; charset=UTF-8"}
