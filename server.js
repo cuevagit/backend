@@ -44,7 +44,7 @@ io.on('connection', async(socket) => {
   // "connection" se ejecuta la primera vez que se abre una nueva conexión
  const productos = await contenedor.getAll();
  if(productos){ 
-  mensajeProductos = ""
+  let mensajeProductos = ""
  productos.forEach(p => {
   mensajeProductos = mensajeProductos + `<tr><td>${p.title}</td> <td>${p.price}</td> <td><img width="70px" src=${p.thumbnail} alt="Imagen producto"/></td><tr>`
  });
@@ -53,7 +53,7 @@ io.on('connection', async(socket) => {
 
  const chat = await contenedorChat.getAll();
  if(chat){ 
-  mensajeChat = ""
+  let mensajeChat = ""
  chat.forEach(c => {
   mensajeChat = mensajeChat + `<strong style="color: blue">${c.email}</strong> - [<h15 style="color: brown"> ${c.fecha}</h15>]: <h15 style="color: green; font-family: italic"> ${c.mensaje}</h15></br>`
 });
