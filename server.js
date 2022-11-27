@@ -5,7 +5,6 @@ const { engine } = require('express-handlebars')  //handlebars
 const { Server: HttpServer } = require('http')
 const { Server: IOServer } = require('socket.io')
 const { Contenedor } = require("./container/container.js")
-const { ContenedorChat } = require("./container/containerChat.js")
 
 const servidor = express()
 const httpServer = new HttpServer(servidor)
@@ -38,7 +37,7 @@ function conectar(puerto = 0) {
 }
 
 const contenedor = new Contenedor('productos.txt')
-const contenedorChat = new ContenedorChat('chat.txt')
+const contenedorChat = new Contenedor('chat.txt')
 
 io.on('connection', async(socket) => {
   // "connection" se ejecuta la primera vez que se abre una nueva conexión

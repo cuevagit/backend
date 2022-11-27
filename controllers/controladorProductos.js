@@ -47,7 +47,7 @@ async function controladorDeleteProductosSegunId({ params: { id } }, res) {
     const productos = await prodTest.getAll();
     const indiceBuscado = productos.findIndex(c => c.id === id);
     if (indiceBuscado === -1) {
-        res.status(404);
+        res.status(403);
         res.json({ mensaje: `no se encontró producto con ese id (${id})` });
     } else {
         const borrados = await prodTest.deleteById(id);

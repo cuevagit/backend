@@ -3,14 +3,16 @@ const fs = require("fs");
 class Contenedor{
 
     #productos;
+    #chat;
     #filename;
 
     constructor(filename) {
         this.#productos = [];
+        this.#chat = [];
         this.#filename = filename;
    }
 
-
+//PRODUCTOS
     async save(objeto){
  
         try {
@@ -109,6 +111,53 @@ class Contenedor{
             error => { throw error}
         } 
     }
+
+
+
+    //CHAT
+
+    async saveChat(objeto){
+ 
+        try {
+           if(await this.getAll())
+            this.#chat = await this.getAllChat()
+        } 
+        catch (error){
+            this.#chat = [];
+            error => { throw error}
+        } 
+    
+        try {
+            this.#chat.push(objeto)
+            await fs.promises.writeFile(this.#filename, JSON.stringify(this.#chat, null, 2))
+            return 'Id del objeto guardado: ' + this.#chat[this.#chat.length - 1].id
+        }
+        catch(error){
+            error => { throw error}
+        } 
+    
+      }
+    
+    
+      async getAllChat(){
+    
+        try {
+            const contenido = JSON.parse(await fs.promises.readFile(this.#filename, 'UTF-8'))
+    
+                if(contenido) { 
+                 this.#chat = contenido
+                 return this.#chat
+                } else { 
+                 return null
+                }
+            }
+    
+        catch(error){
+            error => { throw error}
+        } 
+    
+    }
+    
 
   }
 
