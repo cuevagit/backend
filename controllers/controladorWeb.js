@@ -1,7 +1,7 @@
-const { Contenedor } = require("../container/container.js")
-const { randomUUID } = require('crypto');
+import  Contenedor  from '../container/container.js';
+import { clienteSql } from '../db/clienteSql.js';
 
-const prodTest = new Contenedor('productos.txt')
+const prodTest = new Contenedor(clienteSql, 'productos');
 
  function controladorWeb(req, res) {
     res.render('formulario');
@@ -15,15 +15,12 @@ async function controladorWebListadoProductos(req, res) {
 async function controladorPostWebProductos(req, res) {
     res.status(201);
     const objeto = req.body;
-    objeto.id = randomUUID();
     await prodTest.save(objeto);
     res.render('formulario');
 }
 
 
-exports.controladorWeb = controladorWeb;
-exports.controladorWebListadoProductos = controladorWebListadoProductos;
-exports.controladorPostWebProductos = controladorPostWebProductos;
+export { controladorWeb, controladorWebListadoProductos, controladorPostWebProductos }
 
 
 

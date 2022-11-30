@@ -1,4 +1,4 @@
-const { conectar } = require("./server.js");
+import { conectar } from './server.js';
 
 
 async function main() {

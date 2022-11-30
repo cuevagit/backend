@@ -1,14 +1,14 @@
-const { randomUUID } = require('crypto');
-const { Contenedor } = require("../container/container.js")
-const fs = require("fs");
+import { clienteSql } from '../db/clienteSql.js';
+import Contenedor from '../container/container.js'
 
-const prodTest = new Contenedor('productos.txt')
+
+const prodTest = new Contenedor(clienteSql, 'productos');
 
 async function controladorPostProductos(req, res) {
     res.status(201);
     const objeto = req.body;
-    objeto.id = randomUUID();
-    await prodTest.save(objeto);
+    const id = await prodTest.save(objeto);
+    objeto.id = id
     res.json(objeto)
 }
 
@@ -18,40 +18,40 @@ async function controladorGetProductos(req, res) {
 }
 
 async function controladorGetProductosSegunId({ params: { id } }, res) {
-    const productos = await prodTest.getAll();
-    const buscado = productos.find(c => c.id === id);
-    if (!buscado) {
+    const productos = await prodTest.getById(id);
+
+    if (!productos[0]) {
         res.status(404);
         res.json({ mensaje: `no se encontró producto con ese id (${id})` });
     } else {
-        res.json(buscado);
+        res.json(productos[0]);
     }
 }
 
 async function controladorPutProductosSegunId({ body, params: { id } }, res) {
-    const productos = await prodTest.getAll();
-    const indiceBuscado = productos.findIndex(c => c.id === id);
-    if (indiceBuscado === -1) {
+    const objeto = await prodTest.getById(id)
+
+    if (!objeto[0]) {
         res.status(404);
         res.json({ mensaje: `no se encontró producto con ese id (${id})` });
     } else {
-        body.id = id;
-        productos[indiceBuscado] = body;
-        await prodTest.update(productos);
+        body.id = id  
+        await prodTest.update(body);
         res.json(body);
     }
 }
 
 
-async function controladorDeleteProductosSegunId({ params: { id } }, res) {
-    const productos = await prodTest.getAll();
-    const indiceBuscado = productos.findIndex(c => c.id === id);
-    if (indiceBuscado === -1) {
+async function controladorDeleteProductosSegunId({ body, params: { id } }, res) {
+    const existe = await prodTest.getById(id)
+
+    if (!existe[0]) {
         res.status(403);
         res.json({ mensaje: `no se encontró producto con ese id (${id})` });
     } else {
-        const borrados = await prodTest.deleteById(id);
-        res.json(borrados[0]);
+        await prodTest.deleteById(id);
+        body.id = id
+        res.json(body);
     }
 }
 
@@ -62,9 +62,5 @@ function controladorproductosRandom(req, res){
 
 
 
-exports.controladorGetProductos = controladorGetProductos;
-exports.controladorPostProductos = controladorPostProductos;
-exports.controladorGetProductosSegunId = controladorGetProductosSegunId;
-exports.controladorPutProductosSegunId = controladorPutProductosSegunId;
-exports.controladorDeleteProductosSegunId = controladorDeleteProductosSegunId;
-exports.controladorproductosRandom = controladorproductosRandom;
+export { controladorGetProductos, controladorPostProductos, controladorGetProductosSegunId, 
+controladorPutProductosSegunId, controladorDeleteProductosSegunId, controladorproductosRandom}

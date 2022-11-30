@@ -1,14 +1,14 @@
-const express = require('express');
+import express from 'express';
 const routerApi = express.Router();
 
-const { controladorGetProductos,
+import { controladorGetProductos,
     controladorPostProductos,
     controladorPutProductosSegunId,
     controladorGetProductosSegunId,
     controladorDeleteProductosSegunId,
-    controladorproductosRandom } = require("../controllers/controladorProductos");
+    controladorproductosRandom } from '../controllers/controladorProductos.js';
 
-const { controladorPostChat } = require("../controllers/controladorChat.js")
+import { controladorPostChat } from '../controllers/controladorChat.js'
 
 routerApi.post('/', controladorPostProductos);
 routerApi.get('/', controladorGetProductos);
@@ -19,4 +19,4 @@ routerApi.get('/random/productosRandom', controladorproductosRandom);
 routerApi.post('/chat', controladorPostChat);
 
 
-exports.routerApi = routerApi;
+export default routerApi;

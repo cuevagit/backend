@@ -1,7 +1,7 @@
-const express = require('express');
-const { controladorWeb } = require("../controllers/controladorWeb.js");
-const { controladorWebListadoProductos } = require("../controllers/controladorWeb.js");
-const { controladorPostWebProductos } = require("../controllers/controladorWeb.js");
+import express from 'express';
+import { controladorWeb } from '../controllers/controladorWeb.js';
+import { controladorWebListadoProductos } from '../controllers/controladorWeb.js';
+import { controladorPostWebProductos } from '../controllers/controladorWeb.js';
 
 
 const routerWeb = express.Router();
@@ -11,5 +11,5 @@ routerWeb.get('/productos', controladorWebListadoProductos);
 routerWeb.post('/productos', controladorPostWebProductos);
 
 
-exports.routerWeb = routerWeb;
+export default routerWeb;
 

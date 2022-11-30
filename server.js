@@ -1,13 +1,14 @@
-const express = require('express')
-const { routerApi } = require("./routers/routerApi.js")
-const { routerWeb } = require("./routers/routerWeb.js")
-const { engine } = require('express-handlebars')  //handlebars
-const { Server: HttpServer } = require('http')
-const { Server: IOServer } = require('socket.io')
-const { Contenedor } = require("./container/container.js")
+import express from 'express'
+import routerApi from './routers/routerApi.js'
+import routerWeb from './routers/routerWeb.js'
+import { engine } from 'express-handlebars'  //handlebars
+import { Server as HTTPServer } from 'http'
+import { Server as IOServer } from 'socket.io'
+import Contenedor from './container/container.js'
+import { clienteSql } from './db/clienteSql.js';
 
 const servidor = express()
-const httpServer = new HttpServer(servidor)
+const httpServer = new HTTPServer(servidor)
 const io = new IOServer(httpServer)
 
 //Middlewares para resolver los datos que viene por el Post
@@ -36,8 +37,8 @@ function conectar(puerto = 0) {
   })
 }
 
-const contenedor = new Contenedor('productos.txt')
-const contenedorChat = new Contenedor('chat.txt')
+const contenedor = new Contenedor(clienteSql, 'productos');
+const contenedorChat = new Contenedor(clienteSql, 'chat');
 
 io.on('connection', async(socket) => {
   // "connection" se ejecuta la primera vez que se abre una nueva conexión
@@ -72,7 +73,7 @@ io.on('connection', async(socket) => {
 })
 
 
-module.exports = { conectar }
+export { conectar }
 
 
 

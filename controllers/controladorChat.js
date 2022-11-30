@@ -1,16 +1,15 @@
-const { Contenedor } = require("../container/container.js")
-const { randomUUID } = require('crypto');
-const fs = require("fs");
+import { clienteSql } from '../db/clienteSql.js';
+import Contenedor from '../container/container.js';
 
-const chatTest = new Contenedor('chat.txt')
+const chatTest = new Contenedor(clienteSql, 'chat');
 
 
 async function controladorPostChat(req, res) {
     res.status(201);
     const objeto = req.body;
-    objeto.id = randomUUID();
-    await chatTest.saveChat(objeto);
+    const id = await chatTest.save(objeto);
+    objeto.id = id
     res.json(objeto)
 }
 
-exports.controladorPostChat = controladorPostChat;
+export  {controladorPostChat}; 
