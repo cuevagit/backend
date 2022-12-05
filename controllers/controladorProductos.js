@@ -1,8 +1,11 @@
 import { clienteSql } from '../db/clienteSql.js';
+import { clienteSqlLite3 } from '../db/clienteSql.js';
 import Contenedor from '../container/container.js'
 
 
-const prodTest = new Contenedor(clienteSql, 'productos');
+//const prodTest = new Contenedor(clienteSql, 'productos');
+const prodTest = new Contenedor(clienteSqlLite3, 'productos');
+
 
 async function controladorPostProductos(req, res) {
     res.status(201);

@@ -1,7 +1,10 @@
 import  Contenedor  from '../container/container.js';
 import { clienteSql } from '../db/clienteSql.js';
+import { clienteSqlLite3 } from '../db/clienteSql.js';
 
-const prodTest = new Contenedor(clienteSql, 'productos');
+
+//const prodTest = new Contenedor(clienteSql, 'productos');
+const prodTest = new Contenedor(clienteSqlLite3, 'productos');
 
  function controladorWeb(req, res) {
     res.render('formulario');

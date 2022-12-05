@@ -6,6 +6,8 @@ import { Server as HTTPServer } from 'http'
 import { Server as IOServer } from 'socket.io'
 import Contenedor from './container/container.js'
 import { clienteSql } from './db/clienteSql.js';
+import { clienteSqlLite3 } from './db/clienteSql.js';
+
 
 const servidor = express()
 const httpServer = new HTTPServer(servidor)
@@ -37,8 +39,10 @@ function conectar(puerto = 0) {
   })
 }
 
-const contenedor = new Contenedor(clienteSql, 'productos');
-const contenedorChat = new Contenedor(clienteSql, 'chat');
+//const contenedor = new Contenedor(clienteSql, 'productos');
+//const contenedorChat = new Contenedor(clienteSql, 'chat');
+const contenedor = new Contenedor(clienteSqlLite3, 'productos');
+const contenedorChat = new Contenedor(clienteSqlLite3, 'chat');
 
 io.on('connection', async(socket) => {
   // "connection" se ejecuta la primera vez que se abre una nueva conexión
