@@ -55,23 +55,24 @@ socket.on('mensajesChatActualizados', normalizedMensajesChat => {
 
   denormalizedData = denormalize(normalizedMensajesChat.result, schemaMensajes, normalizedMensajesChat.entities);
 
+
   if(!denormalizedData){
     denormalizedData = denormalize(normalizedMensajesChat.result, schemaMensaje, normalizedMensajesChat.entities);
     mensajesChat = `<strong style="color: blue">${denormalizedData.author.email}</strong> - [<h15 style="color: brown"> ${denormalizedData.fecha}</h15>]: <h15 style="color: green; font-family: italic"> ${denormalizedData.mensaje}</h15> <img width="70px" src=${denormalizedData.author.avatar} alt="Avatar"`
   } else {
     for(let j=0; j<denormalizedData.posts.length; j++ ){
-     mensajesChat = mensajesChat + `<strong style="color: blue">${denormalizedData.posts[j].author.email}</strong> - [<h15 style="color: brown"> ${denormalizedData.posts[j].fecha}</h15>]: <h15 style="color: green; font-family: italic"> ${denormalizedData.posts[j].mensaje}</h15> <img width="70px" src=${denormalizedData.posts[j].author.avatar} alt="Avatar"</br></br>`
+     mensajesChat = mensajesChat + `<strong style="color: blue">${denormalizedData.posts[j].author.email}</strong> - [<h15 style="color: brown"> ${denormalizedData.posts[j].fecha}</h15>]: <h15 style="color: green; font-family: italic"> ${denormalizedData.posts[j].mensaje}</h15> <img width="70px" src=${denormalizedData.posts[j].author.avatar} alt="Avatar"</br></br></td></tr>`
    }
+   const caracteresNormalizado = JSON.stringify(normalizedMensajesChat).length
+   const caracteresDesnormalizado = JSON.stringify(denormalizedData).length
+   const compresion = ((caracteresDesnormalizado/caracteresNormalizado)).toFixed(2)
+   document.getElementById('mensajesChat').insertAdjacentHTML('beforeend', `<div id="messagesCompresion"><strong>CENTRO DE MENSAJES (Compresión de Mensajes: ${compresion} %)</strong></div></br>`); 
   }
+
 
    mensajesChat = mensajesChat + "</td></tr>"
 
-  const caracteresNormalizado = JSON.stringify(normalizedMensajesChat).length
-  const caracteresDesnormalizado = JSON.stringify(denormalizedData).length
-  const compresion = ((caracteresDesnormalizado/caracteresNormalizado)).toFixed(2)
 
-
-  document.getElementById('mensajesChat').insertAdjacentHTML('beforeend', `<div id="messagesCompresion"><strong>CENTRO DE MENSAJES (Compresión de Mensajes: ${compresion} %)</strong></div></br>`);
   document.getElementById('mensajesChat').insertAdjacentHTML('beforeend', `<div id="messagesChat">${mensajesChat}</div></br>`);
 
 });
