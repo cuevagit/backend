@@ -24,18 +24,25 @@
     <span id="chat" style="position: absolute; margin-top: -310px; margin-left: 510px;">
         <h1>CHAT</h1>
         <h5>E-mail: <input id="email" type="text"> </h5>
+        <h5>Nombre: <input id="nombre" type="text"> </h5>
+        <h5>Apellido: <input id="apellido" type="text"> </h5>
+        <h5>Edad: <input id="edad" type="text"> </h5>
+        <h5>Alias: <input id="alias" type="text"> </h5>
+        <h5>Avatar: <input id="avatar" type="text"> </h5>
         <h5>Mensaje: <input id="mensaje" type="text"> </h5>
         <button id="enviarchat" type="button" >Enviar</button>
         <br><br>
-        <div id="mensajesChat">
-
-        </div>
+        <table id="mensajesChat" style="width: 580px" class="table table-striped table-bordered table-secondary">
+        </table>
     </span>
     
     <script src="js/index.js"></script>
 
 </form>
-    <table id="parrafo" class="table table-striped table-bordered table-secondary">
+
+    <table style="width: 500px" id="parrafo" class="table table-striped table-bordered table-secondary">
+
+    <table style="width: 500px" id="productosFake" class="table table-striped table-bordered table-secondary">
 
       <button class="btn btn-success mt-3 mb-5" onclick="location.href='http://localhost:8080/productos/'">Ver Productos</button>
 

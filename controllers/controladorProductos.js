@@ -1,10 +1,13 @@
 import { clienteSql } from '../db/clienteSql.js';
 import { clienteSqlLite3 } from '../db/clienteSql.js';
 import Contenedor from '../container/container.js'
+import ContenedorFaker  from '../container/containerFaker.js'
+
 
 
 //const prodTest = new Contenedor(clienteSql, 'productos');
 const prodTest = new Contenedor(clienteSqlLite3, 'productos');
+const prodTestFaker = new ContenedorFaker();
 
 
 async function controladorPostProductos(req, res) {
@@ -19,6 +22,12 @@ async function controladorGetProductos(req, res) {
     const productos = await prodTest.getAll();
     res.json(productos);
 }
+
+async function controladorGetProductosTest(req, res) {
+    const productos = await prodTestFaker.getProductosTest();
+   res.json(productos);
+}
+
 
 async function controladorGetProductosSegunId({ params: { id } }, res) {
     const productos = await prodTest.getById(id);
@@ -66,4 +75,4 @@ function controladorproductosRandom(req, res){
 
 
 export { controladorGetProductos, controladorPostProductos, controladorGetProductosSegunId, 
-controladorPutProductosSegunId, controladorDeleteProductosSegunId, controladorproductosRandom}
+controladorPutProductosSegunId, controladorDeleteProductosSegunId, controladorproductosRandom, controladorGetProductosTest}
