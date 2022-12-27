@@ -101,32 +101,33 @@ socket.emit('mensajesChatActualizados', normalizedMensajesChat);
    io.sockets.emit('mensajesActualizados', `<tr><td>${data.title}</td> <td>${data.price}</td> <td><img width="70px" src=${data.thumbnail} alt="Imagen producto"/></td><tr>`);
   })
 
-  socket.on('mensajesChat', data => {
+
+  socket.on('mensajesChat', async(data) => {
     data.socketid = socket.id 
     
     //Normalización   
-    const mensajesChat = {
-      id: data.id,
-      author: {
-       id: data.author.id,
-       email: data.author.email,
-       nombre: data.author.nombre,  
-       apellido: data.author.apellido,  
-       edad: data.author.edad,  
-       alias: data.author.alias,
-       avatar: data.author.avatar
-     },
-     fecha: data.fecha,
-     mensaje: data.mensaje
-    }
-  
-      const schemaAuthor = new schema.Entity('author', {}, { idAttribute: 'email' });
-      const schemaMensaje = new schema.Entity('mensajesChat', {author: schemaAuthor});
+  const chat = await contenedorChat.getAll();
 
-      const normalizedMensajesChat = normalize(mensajesChat, schemaMensaje);
+    if(chat){ 
+   
+     const id = Math.floor(Math.random() * 99999)
+   
+     const data = {
+       id: id,
+       posts: chat
+     }
+   
+     const schemaAuthor = new schema.Entity('author', {}, { idAttribute: 'email' });
+     const schemaMensaje = new schema.Entity('mensajesChat', {author: schemaAuthor});
+     const schemaMensajes = new schema.Entity('posts', {author: schemaAuthor, posts: [schemaMensaje]});
+   
+    const  normalizedMensajesChat = normalize(data, schemaMensajes);
+   
+   //print(normalizedMensajesChat)
+   
+   socket.emit('mensajesChatActualizados', normalizedMensajesChat);
+   }
      
-//print(normalizedMensajesChat)
-   io.sockets.emit('mensajesChatActualizados', normalizedMensajesChat);
   })
 
 })

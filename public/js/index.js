@@ -51,26 +51,23 @@ socket.on('mensajesChatActualizados', normalizedMensajesChat => {
   const schemaMensajes = new schema.Entity('posts', {author: schemaAuthor, posts: [schemaMensaje]});
 
   let denormalizedData
-  let mensajesChat = "<tr><td>"
+  let mensajesChat = "<tr>"
 
   denormalizedData = denormalize(normalizedMensajesChat.result, schemaMensajes, normalizedMensajesChat.entities);
 
 
-  if(!denormalizedData){
-    denormalizedData = denormalize(normalizedMensajesChat.result, schemaMensaje, normalizedMensajesChat.entities);
-    mensajesChat = `<strong style="color: blue">${denormalizedData.author.email}</strong> - [<h15 style="color: brown"> ${denormalizedData.fecha}</h15>]: <h15 style="color: green; font-family: italic"> ${denormalizedData.mensaje}</h15> <img width="70px" src=${denormalizedData.author.avatar} alt="Avatar"`
-  } else {
     for(let j=0; j<denormalizedData.posts.length; j++ ){
-     mensajesChat = mensajesChat + `<strong style="color: blue">${denormalizedData.posts[j].author.email}</strong> - [<h15 style="color: brown"> ${denormalizedData.posts[j].fecha}</h15>]: <h15 style="color: green; font-family: italic"> ${denormalizedData.posts[j].mensaje}</h15> <img width="70px" src=${denormalizedData.posts[j].author.avatar} alt="Avatar"</br></br></td></tr>`
+     mensajesChat = mensajesChat + `<strong style="color: blue">${denormalizedData.posts[j].author.email}</strong> - [<h15 style="color: brown"> ${denormalizedData.posts[j].fecha}</h15>]: <h15 style="color: green; font-family: italic"> ${denormalizedData.posts[j].text}</h15> <img width="70px" src=${denormalizedData.posts[j].author.avatar} alt="Avatar"</br></br></td></tr>`
    }
    const caracteresNormalizado = JSON.stringify(normalizedMensajesChat).length
    const caracteresDesnormalizado = JSON.stringify(denormalizedData).length
    const compresion = ((caracteresDesnormalizado/caracteresNormalizado)).toFixed(2)
+   document.getElementById('mensajesChat').innerHTML = ""
    document.getElementById('mensajesChat').insertAdjacentHTML('beforeend', `<div id="messagesCompresion"><strong>CENTRO DE MENSAJES (Compresión de Mensajes: ${compresion} %)</strong></div></br>`); 
-  }
 
 
-   mensajesChat = mensajesChat + "</td></tr>"
+
+   mensajesChat = mensajesChat + "</tr>"
 
 
   document.getElementById('mensajesChat').insertAdjacentHTML('beforeend', `<div id="messagesChat">${mensajesChat}</div></br>`);
@@ -78,12 +75,12 @@ socket.on('mensajesChatActualizados', normalizedMensajesChat => {
 });
 
  
-botonchat.onclick = (e) => {
+botonchat.onclick = async(e) => {
   e.preventDefault();
   
   const fecha = new Date().toLocaleString()
   const email = document.getElementById('email').value
-  const mensaje = document.getElementById('mensaje').value
+  const text = document.getElementById('text').value
   const nombre = document.getElementById('nombre').value
   const apellido = document.getElementById('apellido').value
   const edad = document.getElementById('edad').value
@@ -106,17 +103,18 @@ botonchat.onclick = (e) => {
     avatar: avatar
   },
   fecha: fecha,
-  mensaje: mensaje
+  text: text
  }
 
-  socket.emit('mensajesChat', mensajesChat);
-  form.reset();
 
-  fetch('http://localhost:8080/api/productos/chat', {
+  await fetch('http://localhost:8080/api/productos/chat', {
     method: "POST",
     body: JSON.stringify(mensajesChat),
     headers: {"Content-type": "application/json; charset=UTF-8"}
   })
+
+  socket.emit('mensajesChat', mensajesChat);
+  form.reset();
 
 }
 

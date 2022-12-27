@@ -1,148 +1,92 @@
 [
   {
-    "id": 91308,
+    "id": 42548,
     "author": {
-      "id": 656,
+      "id": 99756,
       "email": "cuevabros@hotmail.com",
       "nombre": "Martin",
       "apellido": "Cueva",
       "edad": "46",
-      "alias": "Nada",
+      "alias": "Alias",
       "avatar": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/2070.png?v=1668203193218"
     },
-    "fecha": "25/12/2022, 15:04:17",
-    "mensaje": "Holass"
+    "fecha": "27/12/2022, 11:01:40",
+    "text": "Hola"
   },
   {
-    "id": 512,
+    "id": 62713,
     "author": {
-      "id": 4297,
+      "id": 62816,
+      "email": "cuevabros@hotmail.com",
+      "nombre": "Martin",
+      "apellido": "Cueva",
+      "edad": "46",
+      "alias": "Alias",
+      "avatar": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"
+    },
+    "fecha": "27/12/2022, 11:03:05",
+    "text": "Hola de nuevo"
+  },
+  {
+    "id": 53552,
+    "author": {
+      "id": 63116,
+      "email": "cuevabros@hotmail.com",
+      "nombre": "Martin",
+      "apellido": "Cueva",
+      "edad": "46",
+      "alias": "Alias",
+      "avatar": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"
+    },
+    "fecha": "27/12/2022, 11:04:24",
+    "text": "Como andas?"
+  },
+  {
+    "id": 98409,
+    "author": {
+      "id": 51470,
+      "email": "cuevabros@hotmail.com",
+      "nombre": "Martin",
+      "apellido": "Cueva",
+      "edad": "46",
+      "alias": "Alias",
+      "avatar": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"
+    },
+    "fecha": "27/12/2022, 11:08:22",
+    "text": "Holas"
+  },
+  {
+    "id": 9665,
+    "author": {
+      "id": 47022,
       "email": "cuevabros2004@hotmail.com",
       "nombre": "German",
       "apellido": "Cueva",
-      "edad": "20",
-      "alias": "Nada",
-      "avatar": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/2070.png?v=1668203193218"
-    },
-    "fecha": "25/12/2022, 15:04:43",
-    "mensaje": "Nadaa"
-  },
-  {
-    "id": 8087,
-    "author": {
-      "id": 48320,
-      "email": "cuevabros@hotmail.com",
-      "nombre": "Martin",
-      "apellido": "Cueva",
       "edad": "46",
-      "alias": "Nada",
-      "avatar": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"
-    },
-    "fecha": "25/12/2022, 15:05:08",
-    "mensaje": "kISS"
-  },
-  {
-    "id": 59907,
-    "author": {
-      "id": 58113,
-      "email": "cuevabros@hotmail.com",
-      "nombre": "Martin",
-      "apellido": "Cueva",
-      "edad": "46",
-      "alias": "Alias",
-      "avatar": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"
-    },
-    "fecha": "25/12/2022, 15:36:54",
-    "mensaje": "Holasss"
-  },
-  {
-    "id": 69870,
-    "author": {
-      "id": 56440,
-      "email": "cuevabros@hotmail.com",
-      "nombre": "Martin",
-      "apellido": "",
-      "edad": "",
-      "alias": "",
+      "alias": "Pela",
       "avatar": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/2070.png?v=1668203193218"
     },
-    "fecha": "25/12/2022, 15:42:26",
-    "mensaje": "tttttttttttttttttttttttttttttttt"
+    "fecha": "27/12/2022, 11:11:42",
+    "text": "Que haces?"
   },
   {
-    "id": 42917,
+    "id": 39383,
     "author": {
-      "id": 80872,
-      "email": "cuevabros@hotmail.com",
-      "nombre": "",
-      "apellido": "",
-      "edad": "",
-      "alias": "",
-      "avatar": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/2070.png?v=1668203193218"
-    },
-    "fecha": "25/12/2022, 15:44:15",
-    "mensaje": "uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu"
-  },
-  {
-    "id": 38056,
-    "author": {
-      "id": 28755,
+      "id": 70686,
       "email": "cuevabros2004@hotmail.com",
-      "nombre": "aaaaa",
-      "apellido": "aaaaa",
-      "edad": "445",
-      "alias": "Alias",
-      "avatar": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/2070.png?v=1668203193218"
-    },
-    "fecha": "25/12/2022, 15:44:47",
-    "mensaje": "aaaaaaaaaaaaaaaaaaaaaaa"
-  },
-  {
-    "id": 7532,
-    "author": {
-      "id": 74396,
-      "email": "cuevabros@hotmail.com",
-      "nombre": "",
-      "apellido": "",
-      "edad": "",
-      "alias": "",
-      "avatar": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/2070.png?v=1668203193218"
-    },
-    "fecha": "25/12/2022, 15:53:51",
-    "mensaje": "hhh"
-  },
-  {
-    "id": 3691,
-    "author": {
-      "id": 39850,
-      "email": "cuevabros@gmail.com",
-      "nombre": "Pedro",
-      "apellido": "Garcia",
-      "edad": "20",
-      "alias": "Mecho",
-      "avatar": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/2070.png?v=1668203193218"
-    },
-    "fecha": "26/12/2022, 17:37:58",
-    "mensaje": "Nuevo mensaje"
-  },
-  {
-    "id": 43505,
-    "author": {
-      "id": 64153,
-      "email": "cuevabros@hotmail.com",
-      "nombre": "Martin",
+      "nombre": "German",
       "apellido": "Cueva",
       "edad": "46",
-      "alias": "Alias",
+      "alias": "Pela",
       "avatar": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/2070.png?v=1668203193218"
     },
-    "fecha": "26/12/2022, 17:40:21",
-    "mensaje": "Nada"
+    "fecha": "27/12/2022, 11:15:40",
+    "text": "Vas hoy?"
   },
   {
-    "id": 62435,
+    "id": 54672,
     "author": {
-      "id": 35706,
+      "id": 96481,
       "email": "cuevabros@hotmail.com",
       "nombre": "Martin",
       "apellido": "Cueva",
@@ -150,13 +94,41 @@
       "alias": "Alias",
       "avatar": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"
     },
-    "fecha": "26/12/2022, 17:44:02",
-    "mensaje": "Hola como estas?"
+    "fecha": "27/12/2022, 11:18:14",
+    "text": "Bien bien"
   },
   {
-    "id": 62011,
+    "id": 9516,
     "author": {
-      "id": 52657,
+      "id": 35464,
+      "email": "cuevabros@hotmail.com",
+      "nombre": "Martin",
+      "apellido": "Cueva",
+      "edad": "46",
+      "alias": "Alias",
+      "avatar": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"
+    },
+    "fecha": "27/12/2022, 11:22:20",
+    "text": "Chau"
+  },
+  {
+    "id": 82977,
+    "author": {
+      "id": 3670,
+      "email": "cuevabros2004@hotmail.com",
+      "nombre": "German",
+      "apellido": "Cueva",
+      "edad": "46",
+      "alias": "Pela",
+      "avatar": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/2070.png?v=1668203193218"
+    },
+    "fecha": "27/12/2022, 11:24:17",
+    "text": "Como?"
+  },
+  {
+    "id": 67151,
+    "author": {
+      "id": 38988,
       "email": "cuevabros@hotmail.com",
       "nombre": "Martin",
       "apellido": "Cueva",
@@ -164,13 +136,55 @@
       "alias": "Alias",
       "avatar": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/2070.png?v=1668203193218"
     },
-    "fecha": "26/12/2022, 17:45:38",
-    "mensaje": "Hello"
+    "fecha": "27/12/2022, 11:25:58",
+    "text": "Hello"
   },
   {
-    "id": 45265,
+    "id": 47073,
     "author": {
-      "id": 40471,
+      "id": 80412,
+      "email": "cuevabros@hotmail.com",
+      "nombre": "Martin",
+      "apellido": "Cueva",
+      "edad": "46",
+      "alias": "Alias",
+      "avatar": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"
+    },
+    "fecha": "27/12/2022, 11:40:13",
+    "text": "A ver que pasa"
+  },
+  {
+    "id": 86260,
+    "author": {
+      "id": 35660,
+      "email": "cuevabros@hotmail.com",
+      "nombre": "Martin",
+      "apellido": "Cueva",
+      "edad": "46",
+      "alias": "Alias",
+      "avatar": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"
+    },
+    "fecha": "27/12/2022, 11:40:51",
+    "text": "Probar de nuevo"
+  },
+  {
+    "id": 61519,
+    "author": {
+      "id": 18478,
+      "email": "cuevabros2004@hotmail.com",
+      "nombre": "German",
+      "apellido": "Cueva",
+      "edad": "46",
+      "alias": "Pela",
+      "avatar": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/2070.png?v=1668203193218"
+    },
+    "fecha": "27/12/2022, 11:44:24",
+    "text": "Trae?"
+  },
+  {
+    "id": 68447,
+    "author": {
+      "id": 98258,
       "email": "cuevabros@hotmail.com",
       "nombre": "Martin",
       "apellido": "Cueva",
@@ -178,7 +192,7 @@
       "alias": "Alias",
       "avatar": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/2070.png?v=1668203193218"
     },
-    "fecha": "26/12/2022, 17:47:14",
-    "mensaje": "Hi"
+    "fecha": "27/12/2022, 11:45:48",
+    "text": "Bueno"
   }
 ]
