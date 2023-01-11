@@ -26,6 +26,8 @@ servidor.use(express.urlencoded({ extended: true }))
 servidor.use('/api/productos', routerApi)
 servidor.use('/api/productos-test', routerApiTest)
 servidor.use('/', routerWeb)
+//servidor.use('/formulario', routerWeb)
+//servidor.use('/login', routerWeb)
 servidor.use('/views', express.static('views'))
 servidor.use(express.static('public'))
 
@@ -71,7 +73,8 @@ servidor.post('/formulario/login', (req, res) => {
   req.session.user = req.body.usuario
 
 if(req.session.user) { 
-  res.json({usuario: req.session.user})
+  //res.json({usuario: req.session.user})
+  return res.redirect('/')
 }
 
  })
