@@ -22,6 +22,61 @@ servidor.use(cors());
 servidor.use(express.json())
 servidor.use(express.urlencoded({ extended: true }))
 
+///LOGIN
+
+servidor.use(session({
+
+  store: MongoStore.create({
+      //En Atlas connect App :  Make sure to change the node version to 2.2.12:
+      mongoUrl: `mongodb+srv://root:12345@cluster0.mqhwyzp.mongodb.net/test`,
+  }),
+  /* ----------------------------------------------------- */
+
+  secret: 'shhhhhhhhhhhhhhhhhhhhh',
+  resave: false,
+  saveUninitialized: false,
+ // ttl: 1000,
+  cookie: {
+      maxAge: 100000
+  } 
+
+}))
+
+
+servidor.post('/formulario/login', (req, res) => {
+  console.log("entro a post")
+  req.session.user = req.body.usuario
+  console.log(req.session.user)
+
+if(!req.session.user) { 
+  //res.json({usuario: req.session.user})
+  return res.redirect('/')
+} else {
+ // res.json({usuario: req.session.user})
+ //console.log("render del formulario")
+ return res.redirect('/formulario')
+}
+
+ })
+
+
+servidor.get('/formulario/login', (req, res) => {
+ // res.redirect("/formulario/login")
+ console.log("Esto es el get del server: " + req.session.user)
+if(req.session.user) { 
+  res.json({usuario: req.session.user})
+}
+else
+ res.redirect("/")
+
+})
+
+
+////
+
+
+
+
 //Middlewares para los routers
 servidor.use('/api/productos', routerApi)
 servidor.use('/api/productos-test', routerApiTest)
@@ -49,47 +104,7 @@ function conectar(puerto = 0) {
 websocket(io)
 
 
- servidor.use(session({
 
-  store: MongoStore.create({
-      //En Atlas connect App :  Make sure to change the node version to 2.2.12:
-      mongoUrl: `mongodb+srv://root:12345@cluster0.mqhwyzp.mongodb.net/test`,
-  }),
-  /* ----------------------------------------------------- */
-
-  secret: 'shhhhhhhhhhhhhhhhhhhhh',
-  resave: false,
-  saveUninitialized: false//,
- // ttl: 1000,
- /* cookie: {
-      maxAge: 100000
-  } */
-
-}))
-
-
-servidor.post('/formulario/login', (req, res) => {
-  console.log("entro a post")
-  req.session.user = req.body.usuario
-
-if(req.session.user) { 
-  //res.json({usuario: req.session.user})
-  return res.redirect('/')
-}
-
- })
-
-
-servidor.get('/formulario/login', (req, res) => {
- // res.redirect("/formulario/login")
-if(req.session.user) { 
-  res.json({usuario: req.session.user})
-  // res.redirect("/login"
-}
-else
- res.redirect("/")
-
-})
 
 
 

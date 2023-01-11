@@ -7,15 +7,24 @@ import { clienteSqlLite3 } from '../db/clienteSql.js';
 const prodTest = new Contenedor(clienteSqlLite3, 'productos');
 
  function controladorWeb(req, res) {
+  //res.render('formulario')
+
   if(req.session?.user) { 
-    return res.redirect('/formulario');
+    res.render('formulario')
   } else {
-     res.render('login')
+    return res.redirect('/');
   }
+
 }
 
 function controladorWebLogin(req, res) {
-    res.render('login');
+    console.log(req.session.user)
+    
+    if(req.session?.user) { 
+        return res.redirect('/formulario');
+      } else {
+         res.render('login')
+      }
  }
 
 async function controladorWebListadoProductos(req, res) {
