@@ -7,8 +7,12 @@ import { clienteSqlLite3 } from '../db/clienteSql.js';
 const prodTest = new Contenedor(clienteSqlLite3, 'productos');
 
  function controladorWeb(req, res) {
-    res.render('formulario');
+   res.render('formulario');
 }
+
+function controladorWebLogin(req, res) {
+    res.render('login');
+ }
 
 async function controladorWebListadoProductos(req, res) {
     const productos = await prodTest.getAll();
@@ -23,7 +27,7 @@ async function controladorPostWebProductos(req, res) {
 }
 
 
-export { controladorWeb, controladorWebListadoProductos, controladorPostWebProductos }
+export { controladorWeb, controladorWebListadoProductos, controladorPostWebProductos, controladorWebLogin }
 
 
 
