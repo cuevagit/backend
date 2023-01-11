@@ -140,12 +140,25 @@ fetch('http://localhost:8080/api/productos-test', {method:'GET'})
       document.getElementById('bienvenido').insertAdjacentHTML('beforeend', `<strong>Bienvenido </strong> ${data.usuario}`);
      // window.location.href ="http://localhost:8080/formulario";
     } else {
-      window.location.href ="http://localhost:8080/login";
-
+      window.location.href = "http://localhost:8080";
     }
-     
    }
   )
 
 
+  const desloguearse = document.getElementById("desloguearse")
 
+  desloguearse.onclick = async(e) => {
+    e.preventDefault();
+  
+   await fetch('http://localhost:8080/formulario/logout', {method:'GET'})
+  /*  .then(response => response.json())
+    .then(data =>    {
+      document.getElementById('despedida').insertAdjacentHTML('beforeend', `<strong>Hasta luego </strong> ${data.usuario}`);
+     }
+    )*/
+    setTimeout(() => {
+    window.location.href ="http://localhost:8080";
+  }, 2000);
+  }
+  

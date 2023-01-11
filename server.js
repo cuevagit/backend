@@ -34,42 +34,45 @@ servidor.use(session({
 
   secret: 'shhhhhhhhhhhhhhhhhhhhh',
   resave: false,
-  saveUninitialized: false,
+  saveUninitialized: false//,
  // ttl: 1000,
-  cookie: {
+ /* cookie: {
       maxAge: 100000
-  } 
+  } */
 
 }))
 
 
+
+
+
+servidor.get('/formulario/login', (req, res) => {
+  // res.redirect("/formulario/login")
+  console.log("Esto es el get del server: " + req.session.user)
+ if(req.session.user) { 
+   res.json({usuario: req.session.user})
+ }
+ else
+  res.redirect("/")
+ 
+ })
 servidor.post('/formulario/login', (req, res) => {
-  console.log("entro a post")
   req.session.user = req.body.usuario
-  console.log(req.session.user)
 
 if(!req.session.user) { 
   //res.json({usuario: req.session.user})
-  return res.redirect('/')
+ // return res.redirect('/')
 } else {
- // res.json({usuario: req.session.user})
- //console.log("render del formulario")
- return res.redirect('/formulario')
+  console.log("entro a post")
+  console.log(req.session.user)
+  return res.redirect('/formulario')
 }
 
  })
 
 
-servidor.get('/formulario/login', (req, res) => {
- // res.redirect("/formulario/login")
- console.log("Esto es el get del server: " + req.session.user)
-if(req.session.user) { 
-  res.json({usuario: req.session.user})
-}
-else
- res.redirect("/")
 
-})
+
 
 
 ////
@@ -81,6 +84,7 @@ else
 servidor.use('/api/productos', routerApi)
 servidor.use('/api/productos-test', routerApiTest)
 servidor.use('/', routerWeb)
+
 //servidor.use('/formulario', routerWeb)
 //servidor.use('/login', routerWeb)
 servidor.use('/views', express.static('views'))
@@ -102,8 +106,6 @@ function conectar(puerto = 0) {
 }
 
 websocket(io)
-
-
 
 
 

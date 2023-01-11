@@ -18,7 +18,7 @@ const prodTest = new Contenedor(clienteSqlLite3, 'productos');
 }
 
 function controladorWebLogin(req, res) {
-    console.log(req.session.user)
+    console.log("ete es el usuario " + req.session.user)
     
     if(req.session?.user) { 
         return res.redirect('/formulario');
@@ -40,7 +40,29 @@ async function controladorPostWebProductos(req, res) {
 }
 
 
-export { controladorWeb, controladorWebListadoProductos, controladorPostWebProductos, controladorWebLogin }
+function controladorLogout(req, res) {
+  
+    //res.json({ususario: "pepe"})
+    const usuario = req.session.user
+
+    req.session.destroy(() => {
+        //res.render("hasta", { hasta: person });
+    //  setTimeout(() => {
+       // res.redirect("http://localhost:8080");
+       console.log("entro al destroy!!!")
+     // res.json({"usuario": usuario})
+      //return res.redirect('/');
+
+   //   }, 2000);
+    });
+
+    res.render('logout')
+
+  
+  }
+
+
+export { controladorWeb, controladorWebListadoProductos, controladorPostWebProductos, controladorWebLogin, controladorLogout }
 
 
 
