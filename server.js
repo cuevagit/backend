@@ -34,11 +34,11 @@ servidor.use(session({
 
   secret: 'shhhhhhhhhhhhhhhhhhhhh',
   resave: false,
-  saveUninitialized: false//,
- // ttl: 1000,
- /* cookie: {
-      maxAge: 100000
-  } */
+  saveUninitialized: false,
+  //ttl: 1//,
+  cookie: {
+      maxAge: 10000
+  } 
 
 }))
 
@@ -71,13 +71,7 @@ if(!req.session.user) {
  })
 
 
-
-
-
-
 ////
-
-
 
 
 //Middlewares para los routers
