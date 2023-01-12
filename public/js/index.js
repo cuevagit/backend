@@ -151,14 +151,15 @@ fetch('http://localhost:8080/api/productos-test', {method:'GET'})
   desloguearse.onclick = async(e) => {
     e.preventDefault();
   
-   await fetch('http://localhost:8080/formulario/logout', {method:'GET'})
-  /*  .then(response => response.json())
+   /*await fetch('http://localhost:8080/formulario/logout', {method:'GET'})
+    .then(response => response.json())
     .then(data =>    {
-      document.getElementById('despedida').insertAdjacentHTML('beforeend', `<strong>Hasta luego </strong> ${data.usuario}`);
+    //  document.getElementById('despedida').insertAdjacentHTML('beforeend', `<strong>Hasta luego </strong> ${data.usuario}`);
      }
     )*/
+    window.location.href ="http://localhost:8080/logout";
     setTimeout(() => {
-    window.location.href ="http://localhost:8080";
+   // window.location.href ="http://localhost:8080";
   }, 2000);
   }
   

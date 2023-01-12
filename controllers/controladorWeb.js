@@ -40,29 +40,44 @@ async function controladorPostWebProductos(req, res) {
 }
 
 
-function controladorLogout(req, res) {
+function controladorLogoutSes(req, res) {
   
     //res.json({ususario: "pepe"})
     const usuario = req.session.user
+    res.json({"usuario": usuario})
+    console.log(req.session)
 
     req.session.destroy(() => {
         //res.render("hasta", { hasta: person });
     //  setTimeout(() => {
        // res.redirect("http://localhost:8080");
        console.log("entro al destroy!!!")
-     // res.json({"usuario": usuario})
       //return res.redirect('/');
 
    //   }, 2000);
     });
 
-    res.render('logout')
-
-  
+ 
   }
 
 
-export { controladorWeb, controladorWebListadoProductos, controladorPostWebProductos, controladorWebLogin, controladorLogout }
+  
+function controladorLogout(req, res) {
+  //console.log("este es el render: " + req.session.user)
+ res.render('logout', {usuario: req.session.user})
+
+ req.session.destroy(() => {
+  //res.render("hasta", { hasta: person });
+ /* setTimeout(() => {
+    res.redirect("/");
+ console.log("entro al destroy!!!")
+//return res.redirect('/');
+   }, 2000);*/
+});
+
+}
+
+export { controladorWeb, controladorWebListadoProductos, controladorPostWebProductos, controladorWebLogin, controladorLogout, controladorLogoutSes }
 
 
 
