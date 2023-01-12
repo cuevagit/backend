@@ -61,7 +61,7 @@ servidor.post('/formulario/login', (req, res) => {
 
 if(!req.session.user) { 
   //res.json({usuario: req.session.user})
- // return res.redirect('/')
+    return res.redirect('/')
 } else {
   console.log("entro a post")
   console.log(req.session.user)
