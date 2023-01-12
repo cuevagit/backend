@@ -10,8 +10,7 @@ function controladorWebLogin(req, res) {
  
  function controladorLogout(req, res) {
     res.render('logout', {usuario: req.session.user})
-    req.session.destroy(() => {
-    });
+    req.session.destroy();
    }
    
 
@@ -21,12 +20,13 @@ function controladorLoging(req, res) {
       res.json({usuario: req.session.user})
     }
     else
-     res.redirect("/")
+     return res.redirect("/")
     
 }
 
 function controladorLoginp(req, res) {
-    req.session.user = req.body.usuario
+    
+  req.session.user = req.body.usuario
   
   if(!req.session.user) { 
       return res.redirect('/')

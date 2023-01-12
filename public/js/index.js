@@ -136,9 +136,7 @@ fetch('http://localhost:8080/api/productos-test', {method:'GET'})
   .then(response => response.json())
   .then(data =>    {
     if(data.usuario){ 
-      document.getElementById('bienvenido').insertAdjacentHTML('beforeend', `<strong>Bienvenido </strong> ${data.usuario}`);
-    } else {
-      window.location.href = "http://localhost:8080";
+      document.getElementById('bienvenido').insertAdjacentHTML('beforeend', `<strong>Bienvenido ${data.usuario}</strong>`);
     }
    }
   )
@@ -146,10 +144,8 @@ fetch('http://localhost:8080/api/productos-test', {method:'GET'})
 
   const desloguearse = document.getElementById("desloguearse")
 
-  desloguearse.onclick = async(e) => {
+  desloguearse.onclick = (e) => {
     e.preventDefault();
-
     window.location.href ="http://localhost:8080/logout";
-
   }
   
