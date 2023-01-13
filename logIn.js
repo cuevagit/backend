@@ -15,7 +15,7 @@ export default function logIn(servidor){
         saveUninitialized: false,
         //ttl: 1//,
         cookie: {
-            maxAge: 100000
+            maxAge: 600000
         } 
       
       }))

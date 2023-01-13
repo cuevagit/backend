@@ -36,4 +36,12 @@ function controladorLoginp(req, res) {
   
 }
 
-export { controladorWebLogin, controladorLoging, controladorLoginp, controladorLogout }
+
+function controladorVolveralogin(req, res) {
+  setTimeout(() => {
+   return res.redirect('/')
+   }, 2000);
+ }
+
+
+export { controladorWebLogin, controladorLoging, controladorLoginp, controladorLogout, controladorVolveralogin }

@@ -142,10 +142,5 @@ fetch('http://localhost:8080/api/productos-test', {method:'GET'})
   )
 
 
-  const desloguearse = document.getElementById("desloguearse")
 
-  desloguearse.onclick = (e) => {
-    e.preventDefault();
-    window.location.href ="http://localhost:8080/logout";
-  }
   

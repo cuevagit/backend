@@ -1,6 +1,10 @@
-<div id="logout" >
+<form id="logout" action="/volveralogin" method="get">
         <table id="despedida" style="margin-left: 100px; width: 1000px; height: 55px" class="table table-striped table-bordered table-secondary">
            <td><strong>Hasta luego {{usuario}}</strong></td> 
         </table>
-           <script src="js/logout.js"></script>
-</div>
+</form>
+
+<script>
+        document.getElementById("logout").submit();
+</script>
+
