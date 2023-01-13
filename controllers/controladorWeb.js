@@ -17,7 +17,6 @@ const prodTest = new Contenedor(clienteSqlLite3, 'productos');
 }
 
 
-
 async function controladorWebListadoProductos(req, res) {
     const productos = await prodTest.getAll();
     res.render('listado', {productos, hayProductos: productos? productos.length : null}) 
