@@ -2,17 +2,15 @@ import  Contenedor  from '../container/container.js';
 import { clienteSql } from '../db/clienteSql.js';
 import { clienteSqlLite3 } from '../db/clienteSql.js';
 
-
 //const prodTest = new Contenedor(clienteSql, 'productos');
 const prodTest = new Contenedor(clienteSqlLite3, 'productos');
 
  function controladorWeb(req, res) {
 
-  if(req.session?.user) { 
+  if(req.isAuthenticated) 
     res.render('formulario')
-  } else {
+   else 
     return res.redirect('/');
-  }
 
 }
 
@@ -28,7 +26,6 @@ async function controladorPostWebProductos(req, res) {
     await prodTest.save(objeto);
     res.render('formulario');
 }
-
 
 
   
