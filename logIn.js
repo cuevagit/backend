@@ -4,21 +4,24 @@ import passport from "passport";
 import { Strategy as LocalStrategy } from "passport-local";
 import { User } from "./models/user.js";
 import jwt from 'jsonwebtoken'
+import {SALTENV} from './config.js'
+import {MONGOCONECTION} from './config.js'
+import {SECRETKEY} from './config.js'
 
 
 export default function logIn(servidor){
   
-	const SALT = 'secreto'
+	const SALT = SALTENV
 
 	servidor.use(session({
 
         store: MongoStore.create({
             //En Atlas connect App :  Make sure to change the node version to 2.2.12:
-            mongoUrl: `mongodb+srv://root:12345@cluster0.mqhwyzp.mongodb.net/test`,
+            mongoUrl: MONGOCONECTION,
         }),
         /* ----------------------------------------------------- */
       
-        secret: 'cuevakey',
+        secret: SECRETKEY,
 		ttl: 600,
         cookie: {
             httpOnly: false,

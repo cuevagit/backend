@@ -9,6 +9,8 @@ import { Server as IOServer } from 'socket.io'
 import websocket from './webSocket.js'
 import logIn from './logIn.js'
 import mongoose from 'mongoose'
+import {MONGOOSE} from './config.js'
+import { routerApiRandom } from './routers/routerApiRandom.js'
 
 
 const servidor = express()
@@ -33,6 +35,7 @@ servidor.use('/api/productos', routerApi)
 servidor.use('/api/productos-test', routerApiTest)
 servidor.use('/', routerWeb)
 servidor.use('/', routerLogin)
+servidor.use('/', routerApiRandom)
 
 servidor.use('/views', express.static('views'))
 servidor.use(express.static('public'))
@@ -43,13 +46,14 @@ servidor.engine('handlebars', engine())
 servidor.set('view engine', 'handlebars')
 
 
-const puerto = process.env.PORT ?? 8080
+const yargs = process.argv.slice(2)
+const puerto = yargs[0] ?? 8080
 
-function conectar(puerto = 0) {
+function conectar() {
 
   ////Conexión de mogoose a la BD de MongoDB
   try {
-    const mongo = mongoose.connect('mongodb+srv://root:12345@cluster0.mqhwyzp.mongodb.net/test', {
+    const mongo = mongoose.connect(MONGOOSE, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
@@ -68,7 +72,6 @@ function conectar(puerto = 0) {
 }
 
 websocket(io)
-
 
 
 export { conectar }

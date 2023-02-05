@@ -1,12 +1,16 @@
+
+import {MYSQL} from '../config.js'
+import {SQLITE} from '../config.js'
+
 export const mysqlConfig = {
     client: 'mysql2',
-    connection: 'mysql://root:cueva1y2*2@localhost:3306/ecommerce'
+    connection: MYSQL
 }
 
 export const sqlite3Config = {
     client: 'sqlite3',
     connection: {
-        filename: "./db/ecommerce/mydb.sqlite"
+        filename: SQLITE
     },
     useNullAsDefault: true   
 }

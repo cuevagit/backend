@@ -6,7 +6,7 @@ import { normalize, denormalize, schema } from "normalizr"
 import util from 'util'
 
 export default function websocket(io){
-    //const contenedor = new ContenedorSql(clienteSql, 'productos');
+//const contenedor = new ContenedorSql(clienteSql, 'productos');
 //const contenedorChat = new Contenedor(clienteSql, 'chat');
 const contenedor = new ContenedorSql(clienteSqlLite3, 'productos');
 //const contenedorChat = new Contenedor(clienteSqlLite3, 'chat');
