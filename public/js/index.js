@@ -28,7 +28,7 @@ form.addEventListener('submit', (e) => {
   socket.emit('mensajes', mensajes);
   form.reset();
 
-  fetch('http://localhost:8080/productos/', {
+  fetch('/productos/', {
     method: "POST",
     body: JSON.stringify(mensajes),
     headers: {"Content-type": "application/json; charset=UTF-8"}
@@ -107,7 +107,7 @@ botonchat.onclick = async(e) => {
  }
 
 
-  await fetch('http://localhost:8080/api/productos/chat', {
+  await fetch('/api/productos/chat', {
     method: "POST",
     body: JSON.stringify(mensajesChat),
     headers: {"Content-type": "application/json; charset=UTF-8"}
@@ -119,7 +119,7 @@ botonchat.onclick = async(e) => {
 }
 
 
-fetch('http://localhost:8080/api/productos-test', {method:'GET'})
+fetch('/api/productos-test', {method:'GET'})
   .then(response => response.json())
   .then(data =>    {
     document.getElementById('productosFake').insertAdjacentHTML('beforeend', `<div id="productosFake"><strong>PRODUCTOS GENERADOS EN FORMA ALEATORIA (FAKERJS)</strong></div>`);
@@ -132,7 +132,7 @@ fetch('http://localhost:8080/api/productos-test', {method:'GET'})
   )
 
 
- fetch('http://localhost:8080/formulario/login', {method:'GET'})
+ fetch('/formulario/login', {method:'GET'})
   .then(response => response.json())
   .then(data =>    {
     if(data.username){ 

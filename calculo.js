@@ -14,11 +14,15 @@ export const  numerosRandom = (cant) => {
     }
     
     for ( let i = 0; i < cant; i++) {
-        numerosRandomList[i] = Math.trunc(Math.random()*1000)        
+        const nroAleatorio = Math.trunc(Math.random()*1000) + 1       
+        numerosRandomList[nroAleatorio] = numerosRandomList[nroAleatorio] + 1  || 1
       }
 
       const resultado = {}
-      numerosRandomList.forEach(el => (resultado[el] = resultado[el] + 1 || 1))
+
+      for (let j = 1; j <= 1000; j++){
+        resultado[j] =   numerosRandomList[j] ?? 0
+      }
  
     return resultado
 
@@ -34,3 +38,9 @@ process.on('message', msg => {
 })
 
 process.send('listo')
+
+
+
+
+
+ 

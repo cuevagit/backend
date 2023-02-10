@@ -1,3 +1,6 @@
+import { cpus } from 'os'
+
+
 class contenedorProcessInfo{
 
     async  processInfo(){
@@ -8,7 +11,8 @@ class contenedorProcessInfo{
                     "Memoria reservada": process.memoryUsage().rss,
                     "Path de Ejecución": process.execPath,
                     "Process Id": process.pid,
-                    "Directorio Actual de Trabajo": process.cwd()  
+                    "Directorio Actual de Trabajo": process.cwd(),
+                    "CPUs": cpus()
                 };
     }
    

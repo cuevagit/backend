@@ -2,8 +2,8 @@
 import { clienteSqlLite3 as knex } from './clienteSql.js'
 
 
-function createTables(){
-knex.schema.hasTable('productos')
+async function createTables(){
+await knex.schema.hasTable('productos')
     .then(exists => {
         if (!exists) {
             knex.schema.createTable('productos', tabla => {
@@ -18,10 +18,10 @@ knex.schema.hasTable('productos')
         } else {
             console.log('la tabla "productos" ya existe. no se realizaron cambios')
         }
-    })
+    }),
   
 
-    knex.schema.hasTable('chat')
+   await knex.schema.hasTable('chat')
     .then(exists => {
         if (!exists) {
             knex.schema.createTable('chat', tabla => {

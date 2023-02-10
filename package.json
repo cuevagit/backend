@@ -6,7 +6,8 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon main.js"
+    "start": "nodemon main.js",
+    "start:cluster": "MODO=cluster node main.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "express": "^4.18.2",
     "express-handlebars": "^6.0.6",
     "express-session": "^1.17.3",
+    "forever": "^0.14.2",
     "http": "^0.0.1-security",
     "jsonwebtoken": "^9.0.0",
     "knex": "^2.3.0",
@@ -37,6 +39,7 @@
     "normalizr": "^3.6.2",
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
+    "pm2": "^5.2.2",
     "socket.io": "^4.5.4",
     "socketio": "^1.0.0",
     "sqlite3": "^5.1.2",

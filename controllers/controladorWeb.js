@@ -7,8 +7,10 @@ const prodTest = new Contenedor(clienteSqlLite3, 'productos');
 
  function controladorWeb(req, res) {
 
-  if(req.isAuthenticated) 
+  if(req.isAuthenticated) {
     res.render('formulario')
+    console.log("este es el formulario: " + process.pid)
+  }
    else 
     return res.redirect('/');
 
