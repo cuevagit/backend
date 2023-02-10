@@ -59,7 +59,7 @@ const yargs = process.argv.slice(2)
 
 let puerto
 
-if(yargs[0] === 'cluster' || yargs[0] === 'fork')
+if(yargs[0] === 'cluster' || yargs[0] === 'fork')   
   puerto = PUERTO_POR_DEFECTO
 else
   puerto = yargs[0] ?? PUERTO_POR_DEFECTO
