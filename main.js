@@ -15,19 +15,8 @@ const numCPUs = os.cpus().length
 //EN EL CASO QUE NO PASE EL PUERTO, EN EL 3ER. PARÁMETRO ESTARÁ EL MODO
 //SI NO PASA EL MODO POR CONSOLA, SE TOMARÁ EL VALOR POR DEFECTO, DEFINIDO EN LAS VARIABLES DE ENTORNO (fork)
 
-let yargs, MODO
 
-yargs = process.argv.slice(2)
-
-if(yargs[0] === 'cluster' || yargs[0] === 'fork') 
-  MODO = yargs[0]   //accedo al valor del array donde se encuentra el MODO
-else {
-    yargs = process.argv.slice(3)
-    if(yargs[0]) 
-      MODO = yargs[0]    //accedo al valor del array donde se encuentra el MODO
-    else 
-      MODO = MODO_POR_DEFECTO 
-}
+const MODO = (process.argv.slice(2)[0] ?? MODO_POR_DEFECTO) === ('cluster' || 'fork') ? process.argv.slice(2)[0] : (process.argv.slice(3)[0] ?? MODO_POR_DEFECTO)  
 
 
 async function main() {

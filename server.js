@@ -64,7 +64,8 @@ if(yargs[0] === 'cluster' || yargs[0] === 'fork')
 else
   puerto = yargs[0] ?? PUERTO_POR_DEFECTO
 
-async function conectar_mongoose(){
+
+  async function conectar_mongoose(){
     ////Conexión de mogoose a la BD de MongoDB
     mongoose.set('strictQuery', false)
     try {
