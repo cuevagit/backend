@@ -26,7 +26,6 @@ servidor.use(express.json())
 servidor.use(express.urlencoded({ extended: true }))
 
 
-
 ///LOGIN CON SESSION Y PASSPORT
 logIn(servidor);
 
