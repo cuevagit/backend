@@ -1,9 +1,12 @@
-import { fork } from 'child_process'
+//import { fork } from 'child_process'
+import {numerosRandom} from '../calculo.js'
+
 
  async function controladorRandom(req, res){
-  console.log("El proceso que atendió fue el " + process.pid)
 
-    const calculo = fork('calculo.js')
+  const numerosRandomLista = numerosRandom(req.query.cant ?? 100000000)
+
+    /*const calculo = fork('calculo.js')
  
     calculo.on('message', msg => {
 
@@ -14,10 +17,11 @@ import { fork } from 'child_process'
         console.log(msg)
           const numerosRandomLista = msg
           res.json(numerosRandomLista);
-       // res.send("Proceso: " + process.pid)
       }
   }
-  )
+  )*/
+  //console.log(numerosRandomLista)
+  res.json(numerosRandomLista);
 
   }
 

@@ -1,5 +1,6 @@
 
 function controladorWebLogin(req, res) {
+  
   if(req.session?.user)  
         return res.redirect('/formulario');
   else 

@@ -12,12 +12,15 @@ import mongoose from 'mongoose'
 import {MONGOOSE} from './config.js'
 import {PUERTO_POR_DEFECTO} from './config.js'
 import { routerApiRandom } from './routers/routerApiRandom.js'
+import loggerRutaNoDisponible from './pinoRutaNoDisponible.js'
+import parseArgs from 'yargs/yargs'
 
 
 
 const servidor = express()
 const httpServer = new HTTPServer(servidor)
 const io = new IOServer(httpServer)
+
 
 
 //Middlewares para resolver los datos que viene por el Post
@@ -28,7 +31,6 @@ servidor.use(express.urlencoded({ extended: true }))
 
 ///LOGIN CON SESSION Y PASSPORT
 logIn(servidor);
-
 
 
 //Middlewares para los routers
@@ -47,21 +49,13 @@ servidor.engine('handlebars', engine())
 servidor.set('view engine', 'handlebars')
 
 
-//PRIMERO SACO EL 3ER. PARÁMETRO PASADO POR CONSOLA, 
-//PUEDE SER QUE NO HAYA PASADO EL PUERTO, Y QUE HAYA PASADO EL MODO, 
-//EN ESE CASO TOMO EL VALOR DEL PUERTO POR DEFECTO, DEFINIDO EN LAS VARIABLES DE ENTORNO
-//EN CASO DE HABER PASADO UN PUERTO POR CONSOLA, LO TOMO A ESE PUERTO
-//EN CASO DE NO HABER PASADO UN PUERTO, 
-//TOMO EL VALOR DEL PUERTO POR DEFECTO, DEFINIDO EN LAS VARIABLES DE ENTORNO
 
-const yargs = process.argv.slice(2)
+const yargs = parseArgs(process.argv.slice(2))
 
-let puerto
+const argv = yargs.alias({p: 'port'}).default({port: PUERTO_POR_DEFECTO}).argv
 
-if(yargs[0] === 'cluster' || yargs[0] === 'fork')   
-  puerto = PUERTO_POR_DEFECTO
-else
-  puerto = yargs[0] ?? PUERTO_POR_DEFECTO
+const puerto = argv.port
+
 
 
   async function conectar_mongoose(){
@@ -87,6 +81,10 @@ else
     })
   })
 }
+
+
+
+loggerRutaNoDisponible(servidor)
 
 
 websocket(io)

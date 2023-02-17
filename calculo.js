@@ -28,7 +28,7 @@ export const  numerosRandom = (cant) => {
 
 }
 
-process.on('message', msg => {
+/*process.on('message', msg => {
     console.log(msg)
     const resultado = numerosRandom(msg)
     
@@ -37,7 +37,7 @@ process.on('message', msg => {
   
 })
 
-process.send('listo')
+process.send('listo')*/
 
 
 

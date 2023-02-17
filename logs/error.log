@@ -1,0 +1,21 @@
+{"level":50,"time":1676406922741,"pid":3880,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /chat y el metodo: POST resultaron con el siguiente eror: Id del objeto guardado: 44738"}
+{"level":50,"time":1676407040052,"pid":796,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /chat y el metodo: POST resultaron con el siguiente eror: Id del objeto guardado: 81718"}
+{"level":50,"time":1676407189353,"pid":4164,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /chat y el metodo: POST resultaron con el siguiente eror: Id del objeto guardado: 57680"}
+{"level":50,"time":1676407307651,"pid":4556,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /chat y el metodo: POST resultaron con el siguiente eror: Id del objeto guardado: 44597"}
+{"level":50,"time":1676411356884,"pid":10556,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /chat y el metodo: POST resultaron con el siguiente eror: undefined"}
+{"level":50,"time":1676411729765,"pid":14260,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /chat y el metodo: POST resultaron con el siguiente eror: Id del objeto guardado: 69171"}
+{"level":50,"time":1676413364605,"pid":5776,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /chat y el metodo: POST resultaron con el siguiente eror: undefined"}
+{"level":50,"time":1676413396736,"pid":5776,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /chat y el metodo: POST resultaron con el siguiente eror: undefined"}
+{"level":50,"time":1676413462460,"pid":10728,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /chat y el metodo: POST resultaron con el siguiente eror: undefined"}
+{"level":50,"time":1676413663745,"pid":12152,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /chat y el metodo: POST resultaron con el siguiente eror: undefined"}
+{"level":50,"time":1676413755940,"pid":11812,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /chat y el metodo: POST resultaron con el siguiente eror: undefined"}
+{"level":50,"time":1676413773312,"pid":11812,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /chat y el metodo: POST resultaron con el siguiente eror: undefined"}
+{"level":50,"time":1676413814275,"pid":6192,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /chat y el metodo: POST resultaron con el siguiente eror: undefined"}
+{"level":50,"time":1676414225721,"pid":3376,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /chat y el metodo: POST resultaron con el siguiente eror: Error: ENOENT: no such file or directory, open ''"}
+{"level":50,"time":1676414288879,"pid":7376,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /chat y el metodo: POST resultaron con el siguiente eror: Error: ENOENT: no such file or directory, open ''"}
+{"level":50,"time":1676415097161,"pid":12668,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /chat y el metodo: POST resultaron con el siguiente eror: Error: Error: ENOENT: no such file or directory, open ''"}
+{"level":50,"time":1676415110289,"pid":12668,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /chat y el metodo: POST resultaron con el siguiente eror: Error: Error: ENOENT: no such file or directory, open ''"}
+{"level":50,"time":1676415238553,"pid":13964,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /chat y el metodo: POST resultaron con el siguiente error: Error: Error: ENOENT: no such file or directory, open ''"}
+{"level":50,"time":1676415257687,"pid":8184,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /chat y el metodo: POST resultaron con el siguiente error: Error: Error: ENOENT: no such file or directory, open ''"}
+{"level":50,"time":1676419502811,"pid":2960,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /productos/ y el metodo: POST resultaron con el siguiente error: Error: Error: insert into  (`price`, `thumbnail`, `title`) values ('', '', '') - SQLITE_ERROR: near \"(\": syntax error"}
+{"level":50,"time":1676420103049,"pid":7692,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /productos/ y el metodo: POST resultaron con el siguiente error: Error: Error: insert into  (`price`, `thumbnail`, `title`) values ('2000', 'https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/12_avatar-256.png', 'Cartuchos 20/70') - SQLITE_ERROR: near \"(\": syntax error"}

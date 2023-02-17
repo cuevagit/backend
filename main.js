@@ -3,20 +3,19 @@ import createTables from './db/createTables.js'
 import {MODO_POR_DEFECTO} from './config.js'
 import cluster from 'cluster' 
 import os from 'os'
+import parseArgs from 'yargs/yargs'
 
 
 cluster.schedulingPolicy = cluster.SCHED_RR;
 
 const numCPUs = os.cpus().length
 
+const yargs = parseArgs(process.argv.slice(2))
 
-//PRIMERO ESTRAIGO EL 3ER. PARÁMETRO PASADO POR CONSOLA
-//EN CASO DE PASAR EL PUERTO SERÁ EL PUERTO Y EL MODO ESTARÁ EN EL 4TO. PARÁMETRO
-//EN EL CASO QUE NO PASE EL PUERTO, EN EL 3ER. PARÁMETRO ESTARÁ EL MODO
-//SI NO PASA EL MODO POR CONSOLA, SE TOMARÁ EL VALOR POR DEFECTO, DEFINIDO EN LAS VARIABLES DE ENTORNO (fork)
+const argv = yargs.alias({m: 'modo'}).default({modo: MODO_POR_DEFECTO}).argv
 
+const MODO = argv.modo
 
-const MODO = (process.argv.slice(2)[0] ?? MODO_POR_DEFECTO) === ('cluster' || 'fork') ? process.argv.slice(2)[0] : (process.argv.slice(3)[0] ?? MODO_POR_DEFECTO)  
 
 
 async function main() {
