@@ -466,3 +466,6 @@
 {"level":40,"time":1676727859992,"pid":10808,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /alt=%22Imagen y el metodo: GET no estan implementados"}
 {"level":40,"time":1676727862389,"pid":10808,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /imagen y el metodo: GET no estan implementados"}
 {"level":40,"time":1676727863745,"pid":10808,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /alt=%22Avatar%22%3C/br y el metodo: GET no estan implementados"}
+{"level":40,"time":1676738179097,"pid":11168,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /alt=%22Imagen y el metodo: GET no estan implementados"}
+{"level":40,"time":1676738179111,"pid":11168,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /imagen y el metodo: GET no estan implementados"}
+{"level":40,"time":1676738179116,"pid":11168,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /alt=%22Avatar%22%3C/br y el metodo: GET no estan implementados"}
