@@ -6,6 +6,7 @@ import { controladorProcessInfo } from "../controllers/controladorProcessInfo.js
 import { controladorWebInfoProcess } from "../controllers/controladorProcessInfo.js"
 import compression from 'compression'
 import loggerMiddleware from '../pino.js'
+import loggerErrorMiddleware from '../pinoError.js'
 
 
 const routerWeb = express.Router();

@@ -8,10 +8,12 @@ import { controladorGetProductos,
 import { controladorPostChat } from '../controllers/controladorChat.js'
 
 import loggerMiddleware from '../pino.js'
+import loggerErrorMiddleware from '../pinoError.js'
 
-routerApi.post('/', loggerMiddleware, controladorPostProductos);
-routerApi.get('/', loggerMiddleware, controladorGetProductos);
-routerApi.post('/chat', loggerMiddleware, controladorPostChat);
+
+routerApi.post('/', loggerErrorMiddleware, loggerMiddleware, controladorPostProductos);
+routerApi.get('/',  loggerMiddleware, controladorGetProductos);
+routerApi.post('/chat', loggerErrorMiddleware, loggerMiddleware, controladorPostChat);
 
 
 

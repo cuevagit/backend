@@ -22,17 +22,17 @@ class Container{
         } 
         catch (error){
             this.#productos = [];
-            return 'Error: ' + error
+            return error
         } 
 
-            this.#productos.push(objeto)
             try{
+              this.#productos.push(objeto)
               await fs.promises.writeFile(this.#filename, JSON.stringify(this.#productos, null, 2))
               return 'Id del objeto guardado: ' + this.#productos[this.#productos.length - 1].id
             }
             catch(error){
-              return 'Error: ' + error
-        }
+                return error
+            }
       }
 
 
@@ -52,7 +52,7 @@ class Container{
             }
 
         catch(error){
-            return 'Error: ' + error
+            return error
         } 
 
     }

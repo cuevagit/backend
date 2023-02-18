@@ -5,16 +5,15 @@ import ContenedorFaker  from '../container/containerFaker.js'
 import pino from 'pino'
 import colors from 'colors'
 
-const logger = pino()
-const pinoError = pino("./logs/error.log");
-
-pino({
+const logger = pino({
     prettyPrint: {
       colorize: true, // colorizes the log
       levelFirst: true,
       translateTime: 'yyyy-dd-mm, h:MM:ss TT',
     },
   })
+  
+  const pinoError = pino("./logs/error.log");
 
 
 //const prodTest = new Contenedor(clienteSql, 'productos');
@@ -26,9 +25,9 @@ async function controladorPostProductos(req, res) {
     res.status(201);
     const objeto = req.body;
     const id = await prodTest.save(objeto);
-    if(id === "Error") {
-        logger.error(colors.red("La URL: " + req.url + " y el metodo: " + req.method + " resultaron con el siguiente error: " + id))
-        pinoError.error("La URL: " + req.url + " y el metodo: " + req.method + " resultaron con el siguiente error: " + id)
+    if(id.message) { 
+        logger.error(colors.red("La URL: " + req.url + " y el metodo: " + req.method + " resultaron con el siguiente error: " + id.message))
+        pinoError.error("La URL: " + req.url + " y el metodo: " + req.method + " resultaron con el siguiente error: " + id.message)
      } else 
         objeto.id = id
     res.json(objeto)
@@ -36,9 +35,9 @@ async function controladorPostProductos(req, res) {
 
 async function controladorGetProductos(req, res) {
     const productos = await prodTest.getAll();
-    if(productos === "Error") {
-        logger.error(colors.red("La URL: " + req.url + " y el metodo: " + req.method + " resultaron con el siguiente error: " + id))
-        pinoError.error("La URL: " + req.url + " y el metodo: " + req.method + " resultaron con el siguiente error: " + id)
+    if(productos.message) { 
+        logger.error(colors.red("La URL: " + req.url + " y el metodo: " + req.method + " resultaron con el siguiente error: " + productos.message))
+        pinoError.error("La URL: " + req.url + " y el metodo: " + req.method + " resultaron con el siguiente error: " + productos.message)
      } else 
      res.json(productos);
 }

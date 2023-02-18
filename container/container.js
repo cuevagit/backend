@@ -21,7 +21,7 @@ class Contenedor{
             return data[0].toString()
         }
        catch(error){
-        return 'Error: ' + error
+        return error
     } 
 
       }
@@ -41,7 +41,7 @@ class Contenedor{
             }
     
         catch(error){
-            return 'Error: ' + error
+            return error
         } 
     
     }
