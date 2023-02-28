@@ -1,5 +1,5 @@
 import express from 'express';
-import loggerMiddleware from '../pino.js'
+
 
 const routerApiTest = express.Router();
 
@@ -7,7 +7,7 @@ const routerApiTest = express.Router();
 import { controladorGetProductosTest } from '../controllers/controladorProductos.js';
 
 
-routerApiTest.get('/', loggerMiddleware, controladorGetProductosTest);
+routerApiTest.get('/',  controladorGetProductosTest);
 
 
 export default routerApiTest;

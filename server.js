@@ -12,6 +12,7 @@ import mongoose from 'mongoose'
 import {MONGOOSE} from './config.js'
 import {PUERTO_POR_DEFECTO} from './config.js'
 import { routerApiRandom } from './routers/routerApiRandom.js'
+import loggerMiddleware from './pino.js'
 import loggerRutaNoDisponible from './pinoRutaNoDisponible.js'
 import parseArgs from 'yargs/yargs'
 
@@ -27,6 +28,7 @@ const io = new IOServer(httpServer)
 //Si viene por un Json o si viene de un formulario (Form)
 servidor.use(express.json())
 servidor.use(express.urlencoded({ extended: true }))
+servidor.use(loggerMiddleware)
 
 
 ///LOGIN CON SESSION Y PASSPORT
