@@ -8,6 +8,7 @@ import { controladorIraRegistro } from '../controllers/controladorLogin.js';
 import { controladorIraLogin } from '../controllers/controladorLogin.js';
 import { controladorFailLogin } from '../controllers/controladorLogin.js';
 import { controladorFailRegister } from '../controllers/controladorLogin.js';
+import { isAuthenticated } from '../middlewares/isAutehnticated.js';
 import passport from "passport";
 
 
@@ -23,15 +24,6 @@ routerLogin.get('/login',  controladorIraLogin);
 routerLogin.post('/formulario/registro',  passport.authenticate("register", { successRedirect: "/",  failureRedirect: "/failregister" })); 
 routerLogin.get('/faillogin',  controladorFailLogin);
 routerLogin.get('/failregister',  controladorFailRegister);
-
-
-function isAuthenticated(req, res, next) {
-    if(req.isAuthenticated()) {
-      return next();
-    }
-    res.redirect('/')
-  }
-
 
 
 export default routerLogin;

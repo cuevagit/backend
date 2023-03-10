@@ -1,6 +1,6 @@
 import { conectar } from './server.js';
 import createTables from './db/createTables.js'
-import {MODO_POR_DEFECTO} from './config.js'
+import {MODO_POR_DEFECTO} from './config/config.js'
 import cluster from 'cluster' 
 import os from 'os'
 import parseArgs from 'yargs/yargs'

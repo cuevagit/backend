@@ -1,5 +1,5 @@
-//import { clienteSql as knex } from './clienteSql.js'
-import { clienteSqlLite3 as knex } from './clienteSql.js'
+import { clienteSql as knex } from './clienteSql.js'
+//import { clienteSqlLite3 as knex } from './clienteSql.js'
 
 
 async function createTables(){

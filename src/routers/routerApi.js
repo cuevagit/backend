@@ -9,9 +9,9 @@ import { controladorPostChat } from '../controllers/controladorChat.js'
 
 
 
-routerApi.post('/',  controladorPostProductos);
-routerApi.get('/',   controladorGetProductos);
-routerApi.post('/chat',  controladorPostChat);
+routerApi.post('/',  controladorPostProductos);   //Ya hecho
+routerApi.get('/',   controladorGetProductos);    //Ya hecho
+routerApi.post('/chat',  controladorPostChat);    //Ya hecho
 
 
 

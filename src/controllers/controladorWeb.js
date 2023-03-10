@@ -1,7 +1,8 @@
 import  Contenedor  from '../container/container.js';
 import { clienteSql } from '../db/clienteSql.js';
 import { clienteSqlLite3 } from '../db/clienteSql.js';
-import loggerError from '../pinoError.js';
+import loggerError from '../utils/pinoError.js';
+import { productService } from '../negocio/services/product.service.js';
 
 
 
@@ -19,20 +20,34 @@ const prodTest = new Contenedor(clienteSqlLite3, 'productos');
 
 
 async function controladorWebListadoProductos(req, res) {
-    const productos = await prodTest.getAll();
-    res.render('listado', {productos, hayProductos: productos? productos.length : null}) 
-}
+    
+  const productos = await productService.listarProducto();
+
+      if(productos.message) {
+        loggerError(req, error.message)
+        throw(error)
+      }
+     else
+       res.render('listado', {productos, hayProductos: productos? productos.length : null}) 
+    }
+
+
 
 async function controladorPostWebProductos(req, res) {
+
     res.status(201);
     const objeto = req.body;
-    const resul = await prodTest.save(objeto);
+    const resul = productService.grabarProducto(objeto)
 
-    if(resul.message) { 
-      loggerError(req, resul.message)
-     } 
-    res.render('formulario');
+    if(resul.message) {
+      loggerError(req, error.message)
+      throw(error)
+    } else
+       res.render('formulario');
+
 }
+
+
 
 
   

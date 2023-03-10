@@ -53,3 +53,7 @@
 {"level":50,"time":1676827900606,"pid":8716,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /productos/ y el metodo: POST resultaron con el siguiente error: insert into  (`price`, `thumbnail`, `title`) values ('', '', '') - SQLITE_ERROR: near \"(\": syntax error"}
 {"level":50,"time":1676827951890,"pid":11696,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /productos/ y el metodo: POST resultaron con el siguiente error: insert into  (`price`, `thumbnail`, `title`) values ('211', 'https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/12_avatar-256.png', 'hoynov') - SQLITE_ERROR: near \"(\": syntax error"}
 {"level":50,"time":1677613570310,"pid":8808,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /chat y el metodo: POST resultaron con el siguiente error: this[#productos].push is not a function"}
+{"level":50,"time":1678275951258,"pid":4800,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /productos/ y el metodo: POST resultaron con el siguiente error: productService is not defined"}
+{"level":50,"time":1678329725953,"pid":3844,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /chat y el metodo: POST resultaron con el siguiente error: socket is not defined"}
+{"level":50,"time":1678330004970,"pid":5668,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /chat y el metodo: POST resultaron con el siguiente error: Cannot read properties of undefined (reading 'on')"}
+{"level":50,"time":1678405627184,"pid":10580,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /chat y el metodo: POST resultaron con el siguiente error: this[#productos].push is not a function"}

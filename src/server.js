@@ -6,14 +6,14 @@ import routerLogin from './routers/routerLogin.js'
 import { engine } from 'express-handlebars'  //handlebars
 import { Server as HTTPServer } from 'http'
 import { Server as IOServer } from 'socket.io'
-import websocket from './webSocket.js'
-import logIn from './logIn.js'
+import websocket from './utils/webSocket.js'
+import logIn from './authentication/logIn.js'
 import mongoose from 'mongoose'
-import {MONGOOSE} from './config.js'
-import {PUERTO_POR_DEFECTO} from './config.js'
+import {MONGOOSE} from './config/config.js'
+import {PUERTO_POR_DEFECTO} from './config/config.js'
 import { routerApiRandom } from './routers/routerApiRandom.js'
-import loggerMiddleware from './pino.js'
-import loggerRutaNoDisponible from './pinoRutaNoDisponible.js'
+import loggerMiddleware from './utils/pino.js'
+import loggerRutaNoDisponible from './utils/pinoRutaNoDisponible.js'
 import parseArgs from 'yargs/yargs'
 
 
@@ -86,7 +86,7 @@ const puerto = argv.port
 
 
 
-loggerRutaNoDisponible(servidor)
+loggerRutaNoDisponible(servidor, io)
 
 
 websocket(io)

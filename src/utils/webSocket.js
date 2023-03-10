@@ -1,16 +1,10 @@
-import Contenedor from './container/containerArchivo.js'
-import ContenedorSql from './container/container.js'
-import { clienteSql } from './db/clienteSql.js';
-import { clienteSqlLite3 } from './db/clienteSql.js';
 import { normalize, denormalize, schema } from "normalizr"
 import util from 'util'
+import { chatService } from '../negocio/services/chat.service.js';
+import { productService } from '../negocio/services/product.service.js';
+
 
 export default function websocket(io){
-//const contenedor = new ContenedorSql(clienteSql, 'productos');
-//const contenedorChat = new Contenedor(clienteSql, 'chat');
-const contenedor = new ContenedorSql(clienteSqlLite3, 'productos');
-//const contenedorChat = new Contenedor(clienteSqlLite3, 'chat');
-const contenedorChat = new Contenedor('chat.txt');
 
 
 function print(objeto) {
@@ -23,7 +17,7 @@ const schemaMensajes = new schema.Entity('posts', {author: schemaAuthor, posts: 
 
 io.on('connection', async(socket) => {
   // "connection" se ejecuta la primera vez que se abre una nueva conexión
- const productos = await contenedor.getAll();
+ const productos = await productService.listarProducto();
 
  if(productos){ 
   let mensajeProductos = ""
@@ -38,7 +32,7 @@ io.on('connection', async(socket) => {
  socket.emit('mensajesActualizados', mensajeProductos);
 }
 
- const chat = await contenedorChat.getAll();
+ const chat = await chatService.listarChat()
 
  if(chat){ 
 
@@ -65,7 +59,7 @@ io.on('connection', async(socket) => {
     data.socketid = socket.id 
     
     //Normalización   
-  const chat = await contenedorChat.getAll();
+   const chat = await chatService.listarChat();
 
     if(chat){ 
    
