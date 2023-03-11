@@ -9,12 +9,12 @@ import compression from 'compression'
 
 const routerWeb = express.Router();
 
-routerWeb.get('/formulario',  controladorWeb);  //No
-routerWeb.get('/productos',  controladorWebListadoProductos);   //hecho 
-routerWeb.post('/productos',  controladorPostWebProductos);    //hecho
-routerWeb.get('/info',  controladorProcessInfo)    //Hecho
-routerWeb.get('/infoconcompresion',  compression(), controladorProcessInfo)   //No
-routerWeb.get('/infoList',  controladorWebInfoProcess)   //No
+routerWeb.get('/formulario',  controladorWeb);   
+routerWeb.get('/productos',  controladorWebListadoProductos);    
+routerWeb.post('/productos',  controladorPostWebProductos);     
+routerWeb.get('/info',  controladorProcessInfo)     
+routerWeb.get('/infoconcompresion',  compression(), controladorProcessInfo)   
+routerWeb.get('/infoList',  controladorWebInfoProcess)    
 
 
 export default routerWeb;
