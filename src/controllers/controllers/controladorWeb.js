@@ -1,5 +1,5 @@
-import loggerError from '../negocio/utils/pinoError.js';
-import { productService } from '../negocio/services/product.service.js';
+import loggerError from '../../negocio/utils/pinoError.js';
+import { productService } from '../../negocio/services/product.service.js';
 
 
 

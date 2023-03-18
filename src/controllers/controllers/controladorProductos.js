@@ -1,6 +1,6 @@
-import ContenedorFaker  from '../daos/container/containerFaker.js'
-import loggerError from '../negocio/utils/pinoError.js';
-import { productService } from '../negocio/services/product.service.js';
+import ContenedorFaker  from '../../daos/container/containerFaker.js'
+import loggerError from '../../negocio/utils/pinoError.js';
+import { productService } from '../../negocio/services/product.service.js';
 
 
 const prodTestFaker = new ContenedorFaker();

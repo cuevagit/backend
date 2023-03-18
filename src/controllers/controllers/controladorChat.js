@@ -1,5 +1,5 @@
-import loggerError from '../negocio/utils/pinoError.js';
-import { chatService } from '../negocio/services/chat.service.js';
+import loggerError from '../../negocio/utils/pinoError.js';
+import { chatService } from '../../negocio/services/chat.service.js';
 
 
 

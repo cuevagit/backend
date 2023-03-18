@@ -1,5 +1,5 @@
 //import { fork } from 'child_process'
-import {numerosRandom} from '../negocio/calculo.js'
+import {numerosRandom} from '../../negocio/calculo.js'
 
 
  async function controladorRandom(req, res){

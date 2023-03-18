@@ -9,5 +9,15 @@
     "title": "probarfs",
     "price": "2000",
     "thumbnail": "https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/12_avatar-256.png"
+  },
+  {
+    "title": "probar3",
+    "price": "2000",
+    "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/2070.png?v=1668203193218"
+  },
+  {
+    "title": "probar4",
+    "price": "1550",
+    "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"
   }
 ]

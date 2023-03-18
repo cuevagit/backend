@@ -1,4 +1,4 @@
-import { infoService } from '../negocio/services/info.service.js';
+import { infoService } from '../../negocio/services/info.service.js';
 
 
 
