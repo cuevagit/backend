@@ -1,12 +1,8 @@
-import { clienteSql } from '../db/clienteSql.js';
-//import { clienteSqlLite3 } from '../db/clienteSql.js';
-import Contenedor from '../container/container.js'
-import ContenedorFaker  from '../container/containerFaker.js'
-import loggerError from '../utils/pinoError.js';
+import ContenedorFaker  from '../daos/container/containerFaker.js'
+import loggerError from '../negocio/utils/pinoError.js';
 import { productService } from '../negocio/services/product.service.js';
 
-const prodTest = new Contenedor(clienteSql, 'productos');
-//const prodTest = new Contenedor(clienteSqlLite3, 'productos');
+
 const prodTestFaker = new ContenedorFaker();
 
 

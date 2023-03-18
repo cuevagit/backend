@@ -1,12 +1,8 @@
-import  Contenedor  from '../container/container.js';
-import { clienteSql } from '../db/clienteSql.js';
-import { clienteSqlLite3 } from '../db/clienteSql.js';
-import loggerError from '../utils/pinoError.js';
+import loggerError from '../negocio/utils/pinoError.js';
 import { productService } from '../negocio/services/product.service.js';
 
 
 
-const prodTest = new Contenedor(clienteSqlLite3, 'productos');
 
  function controladorWeb(req, res) {
 

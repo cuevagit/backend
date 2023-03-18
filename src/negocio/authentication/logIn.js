@@ -4,9 +4,9 @@ import passport from "passport";
 import { Strategy as LocalStrategy } from "passport-local";
 import { User } from "./model/user.js";
 import jwt from 'jsonwebtoken'
-import {SALTENV} from '../config/config.js'
-import {MONGOCONECTION} from '../config/config.js'
-import {SECRETKEY} from '../config/config.js'
+import {SALTENV} from '../../config/config.js'
+import {MONGOCONECTION} from '../../config/config.js'
+import {SECRETKEY} from '../../config/config.js'
 
 
 export default function logIn(servidor){

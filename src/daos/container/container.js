@@ -50,4 +50,4 @@ class Contenedor{
 
 
 
- export  default Contenedor;
+ export {Contenedor};

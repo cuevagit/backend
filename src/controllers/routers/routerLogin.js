@@ -1,14 +1,14 @@
 import express from 'express';
-import { controladorWebLogin } from '../controllers/controladorLogin.js';
-import { controladorLogout } from '../controllers/controladorLogin.js';
-import { controladorLoging } from '../controllers/controladorLogin.js';
-import { controladorLoginp } from '../controllers/controladorLogin.js';
-import { controladorVolveralogin } from '../controllers/controladorLogin.js';
-import { controladorIraRegistro } from '../controllers/controladorLogin.js';
-import { controladorIraLogin } from '../controllers/controladorLogin.js';
-import { controladorFailLogin } from '../controllers/controladorLogin.js';
-import { controladorFailRegister } from '../controllers/controladorLogin.js';
-import { isAuthenticated } from '../middlewares/isAutehnticated.js';
+import { controladorWebLogin } from '../../controllers/controladorLogin.js';
+import { controladorLogout } from '../../controllers/controladorLogin.js';
+import { controladorLoging } from '../../controllers/controladorLogin.js';
+import { controladorLoginp } from '../../controllers/controladorLogin.js';
+import { controladorVolveralogin } from '../../controllers/controladorLogin.js';
+import { controladorIraRegistro } from '../../controllers/controladorLogin.js';
+import { controladorIraLogin } from '../../controllers/controladorLogin.js';
+import { controladorFailLogin } from '../../controllers/controladorLogin.js';
+import { controladorFailRegister } from '../../controllers/controladorLogin.js';
+import { isAuthenticated } from '../../negocio/middlewares/isAutehnticated.js';
 import passport from "passport";
 
 

@@ -1,6 +1,6 @@
 import { MongoClient } from 'mongodb';
-import {MONGOCONECTION} from '../config.js'
-import {MONGODB} from '../config.js'
+import {MONGOCONECTION} from '../../config/config.js'
+import {MONGODB} from '../../config/config.js'
 
 
 const CNX_STR = MONGOCONECTION

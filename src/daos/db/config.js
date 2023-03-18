@@ -1,6 +1,6 @@
 
-import {MYSQL} from '../config/config.js'
-import {SQLITE} from '../config/config.js'
+import {MYSQL} from '../../config/config.js'
+import {SQLITE} from '../../config/config.js'
 
 export const mysqlConfig = {
     client: 'mysql2',

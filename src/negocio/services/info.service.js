@@ -1,4 +1,4 @@
-import contenedorProcessInfo from '../../container/containerProcessInfo.js'
+import contenedorProcessInfo from '../../daos/container/containerProcessInfo.js'
 
 
 

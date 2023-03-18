@@ -1,27 +1,54 @@
-import Container from "../../container/containerArchivo.js"
+//import Container from "../../container/containerArchivo.js"
+import { ChatDto } from "../dtos/chatsDTO.js"
 
 
 class Chat{
 
-    constructor({ id, email, nombre, apellido, edad, alias, avatar,mensaje  }) {
-        this._id = id
-        this.email = email
-        this.nombre = nombre
-        this.apellido = apellido
-        this.edad = edad
-        this.alias = alias
-        this.avatar = avatar
-        this.mensaje = mensaje
+    #id
+    #author
+    #fecha
+    #text
+
+    constructor({ id, author, fecha, text  }) {
+        this.#id = id
+        this.#author = author
+        this.#fecha = fecha
+        this.#text = text
     }
 
+    get id() { return this.#id }
 
+    get email() { return this.#author.email }
 
+    get nombre() { return this.#author.nombre }
 
-    async guardar(objeto) {
-            const contenedor = new Container("chat.txt")
+    get apellido() { return this.#author.apellido }
+
+    get edad() { return this.#author.edad }
+
+    get alias() { return this.#author.alias }
+
+    get avatar() { return this.#author.avatar }
+
+    get fecha() { return this.#fecha }
+
+    get mensaje() { return this.#text }
+
+    /* async guardar(objeto) {
+            //const contenedor = new Container("chat.txt")
             const resul = await contenedor.save(objeto)
             return resul
-      }
+      }*/
+
+
+      datos() {
+        return new ChatDto({
+            id: this.#id, 
+            author: this.#author,
+            fecha: this.#fecha, 
+            text: this.#text         
+        })
+    }
 
  }
 

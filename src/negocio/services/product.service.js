@@ -1,22 +1,33 @@
 import Productos from '../models/product.js'
-import Contenedor from '../../container/container.js'
-import ContenedorFaker from '../../container/containerFaker.js'
-import { clienteSql } from '../../db/clienteSql.js';
+import { Products } from '../repository/product/index.js';
+import ContenedorFaker from '../../daos/container/containerFaker.js'
 
 
 class ProductService {
 
     async grabarProducto(objeto) {
-        const productos = new Productos(objeto);
-        const registroProducto = await productos.guardar(objeto)
-        return registroProducto
+        try {
+            const product = new Productos(objeto);
+            const registroProduct = await Products.grabarProducto(product)
+            return registroProduct  
+        } catch (error) {
+            return error
+        }
     }
 
     async listarProducto() {
-        const contenedor = new Contenedor(clienteSql, 'productos');
-        const listadoProducto = await contenedor.getAll()
-        return listadoProducto
+        try {
+                const listadoProducts = await Products.listarProducto()
+                const products = []
+                listadoProducts.forEach(d => {
+                    products.push(d.datos())
+                });
+                return products
+        } catch (error) {
+            return error
+        }
     }
+    
 
     async productosFaker(objeto) {
         const productosFaker = new ContenedorFaker(objeto)

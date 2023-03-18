@@ -1,7 +1,7 @@
 import { normalize, denormalize, schema } from "normalizr"
 import util from 'util'
-import { chatService } from '../negocio/services/chat.service.js';
-import { productService } from '../negocio/services/product.service.js';
+import { chatService } from '../services/chat.service.js';
+import { productService } from '../services/product.service.js';
 
 
 export default function websocket(io){
@@ -20,6 +20,7 @@ io.on('connection', async(socket) => {
  const productos = await productService.listarProducto();
 
  if(productos){ 
+
   let mensajeProductos = ""
 
   mensajeProductos = mensajeProductos + `<div id="productosFake"><b>PRODUCTOS DESDE LA BASE DE DATOS</b></div>`;

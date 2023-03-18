@@ -42,7 +42,6 @@ class Container{
 
         try {
             const contenido = JSON.parse(await fs.promises.readFile(this.#filename, 'UTF-8'))
-
                 if(contenido) { 
                  this.#productos = contenido
                  return this.#productos
@@ -61,4 +60,4 @@ class Container{
 
 
 
- export default Container;
+ export  {Container};

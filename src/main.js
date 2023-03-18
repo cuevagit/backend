@@ -1,5 +1,5 @@
-import { conectar } from './server.js';
-import createTables from './db/createTables.js'
+import { conectar } from './controllers/server.js';
+import createTables from './daos/db/createTables.js'
 import {MODO_POR_DEFECTO} from './config/config.js'
 import cluster from 'cluster' 
 import os from 'os'

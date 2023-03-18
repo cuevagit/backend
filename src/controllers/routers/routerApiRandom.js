@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { controladorRandom } from '../controllers/controladorRandom.js';
+import { controladorRandom } from '../../controllers/controladorRandom.js';
 
 const routerApiRandom = Router();
 

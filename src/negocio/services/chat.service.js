@@ -1,19 +1,30 @@
 import Chat from '../models/chat.js'
-import Container from '../../container/containerArchivo.js'
+import { Chats } from '../repository/chat/index.js';
 
 
 class ChatService {
     
     async grabarChat(objeto) {
-        const chat = new Chat(objeto);
-        const registroChat = await chat.guardar(objeto)
-        return registroChat
+        try {
+            const chat = new Chat(objeto);
+            const registroChat = await Chats.guardar(chat)
+            return registroChat  
+        } catch (error) {
+            return error
+        }
     }
 
     async listarChat() {
-        const contenedor = new Container('chat.txt');
-        const listadoChat = await contenedor.getAll()
-        return listadoChat
+        try {
+            const listadoChat = await Chats.listadoChat()
+            const chat = []
+            listadoChat.forEach(d => {
+                chat.push(d.datos())
+            });
+            return chat
+        } catch (error) {
+            return error
+        }
     }
 
 }

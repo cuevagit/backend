@@ -3,9 +3,9 @@ const routerApi = express.Router();
 
 
 import { controladorGetProductos,
-    controladorPostProductos } from '../controllers/controladorProductos.js';
+    controladorPostProductos } from '../../controllers/controladorProductos.js';
 
-import { controladorPostChat } from '../controllers/controladorChat.js'
+import { controladorPostChat } from '../../controllers/controladorChat.js'
 
 
 
