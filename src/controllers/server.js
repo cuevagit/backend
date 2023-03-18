@@ -52,7 +52,10 @@ servidor.engine('handlebars', engine())
 servidor.set('view engine', 'handlebars')
 
 //Cors
-servidor.use(cors())
+servidor.use(cors(
+ // {origin: ''}
+   )
+)
 
 
 const yargs = parseArgs(process.argv.slice(2))
