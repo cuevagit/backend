@@ -1,9 +1,4 @@
-//import Contenedor from "../../container/container.js"
-//import { clienteSql } from '../../db/clienteSql.js';
 import { ProductDto } from "../dtos/productsDTO.js"
-
-
-//const contenedor = new Contenedor(clienteSql, "productos")
 
 
 class Productos{

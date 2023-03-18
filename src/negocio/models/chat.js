@@ -1,4 +1,3 @@
-//import Container from "../../container/containerArchivo.js"
 import { ChatDto } from "../dtos/chatsDTO.js"
 
 
@@ -34,11 +33,6 @@ class Chat{
 
     get mensaje() { return this.#text }
 
-    /* async guardar(objeto) {
-            //const contenedor = new Container("chat.txt")
-            const resul = await contenedor.save(objeto)
-            return resul
-      }*/
 
 
       datos() {
