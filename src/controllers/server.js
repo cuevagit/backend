@@ -15,6 +15,7 @@ import { routerApiRandom } from '../controllers/routers/routerApiRandom.js'
 import loggerMiddleware from '../negocio/utils/pino.js'
 import loggerRutaNoDisponible from '../negocio/utils/pinoRutaNoDisponible.js'
 import parseArgs from 'yargs/yargs'
+import cors from 'cors'
 
 
 
@@ -50,6 +51,8 @@ servidor.use(express.static('public'))
 servidor.engine('handlebars', engine())
 servidor.set('view engine', 'handlebars')
 
+//Cors
+servidor.use(cors())
 
 
 const yargs = parseArgs(process.argv.slice(2))
