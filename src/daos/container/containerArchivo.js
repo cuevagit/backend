@@ -28,6 +28,7 @@ class Container{
         } 
 
             try{
+             if(!objeto.id)
               objeto._id = randomUUID();
               this.#productos.push(objeto)
               await fs.promises.writeFile(this.#filename, JSON.stringify(this.#productos, null, 2))
