@@ -22,7 +22,6 @@ export class product {
     async listarProducto() {
         try {
             const dtos = await this.#dao.getAll()
-
           if(dtos != []){
             const datos = dtos.map(dto => new Productos(dto))
             return datos

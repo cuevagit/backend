@@ -8,8 +8,8 @@ class Productos{
     #price
     #thumbnail
 
-    constructor({ id, title, price, thumbnail }) {
-        this.#id = id
+    constructor({ _id, title, price, thumbnail }) {
+        this.#id = _id
         this.#title = title
         this.#price = price
         this.#thumbnail = thumbnail
@@ -33,7 +33,7 @@ class Productos{
 
        datos() {
         return new ProductDto({
-            id: this.#id,  
+            _id: this.#id,  
             title: this.#title,  
             price: this.#price,  
             thumbnail: this.#thumbnail      

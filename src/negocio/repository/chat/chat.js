@@ -19,6 +19,7 @@ export class chat {
 
   async listadoChat(){
     try {
+
         const dtos = await this.#dao.getAll()
 
         if(dtos != []){

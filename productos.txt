@@ -19,5 +19,10 @@
     "title": "probar4",
     "price": "1550",
     "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"
+  },
+  {
+    "title": "probarid2",
+    "price": "2000",
+    "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"
   }
 ]
