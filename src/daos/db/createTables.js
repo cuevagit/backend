@@ -1,5 +1,5 @@
-import { clienteSql as knex } from './clienteSql.js'
-//import { clienteSqlLite3 as knex } from './clienteSql.js'
+//import { clienteSql as knex } from './clienteSql.js'
+import { clienteSqlLite3 as knex } from './clienteSql.js'
 
 
 async function createTables(){
@@ -7,7 +7,7 @@ await knex.schema.hasTable('productos')
     .then(exists => {
         if (!exists) {
             knex.schema.createTable('productos', tabla => {
-                tabla.increments('id'),
+                tabla.increments('_id'),
                     tabla.string('title'),
                     tabla.integer('price'),
                     tabla.string('thumbnail')
@@ -25,7 +25,7 @@ await knex.schema.hasTable('productos')
     .then(exists => {
         if (!exists) {
             knex.schema.createTable('chat', tabla => {
-                tabla.increments('id'),
+                tabla.increments('_id'),
                     tabla.string('fecha'),
                     tabla.string('email'),
                     tabla.string('mensaje')

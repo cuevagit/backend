@@ -1,4 +1,6 @@
 import fs from 'fs';
+import {randomUUID}  from 'crypto';
+ 
 
 class Container{
 
@@ -26,6 +28,7 @@ class Container{
         } 
 
             try{
+              objeto._id = randomUUID();
               this.#productos.push(objeto)
               await fs.promises.writeFile(this.#filename, JSON.stringify(this.#productos, null, 2))
               return 'Id del objeto guardado: ' + this.#productos[this.#productos.length - 1].id
