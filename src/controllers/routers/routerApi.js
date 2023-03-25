@@ -3,14 +3,20 @@ const routerApi = express.Router();
 
 
 import { controladorGetProductos,
-    controladorPostProductos } from '../../controllers/controllers/controladorProductos.js';
+         controladorPostProductos,
+         controladorPutProductosSegunId,
+         controladorDeleteProductosSegunId,
+         controladorGetProductoSegunId } from '../../controllers/controllers/controladorProductos.js';
 
 import { controladorPostChat } from '../../controllers/controllers/controladorChat.js'
 
 
 
 routerApi.post('/',  controladorPostProductos);    
-routerApi.get('/',   controladorGetProductos);     
+routerApi.get('/',   controladorGetProductos);  
+routerApi.get('/:id', controladorGetProductoSegunId);  
+routerApi.put('/:id', controladorPutProductosSegunId);
+routerApi.delete('/:id', controladorDeleteProductosSegunId);   
 routerApi.post('/chat',  controladorPostChat);     
 
 

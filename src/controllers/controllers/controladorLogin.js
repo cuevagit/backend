@@ -1,67 +1,29 @@
-
-function controladorWebLogin(req, res) {
-  
-  if(req.session?.user)  
-        return res.redirect('/formulario');
-  else 
-        res.render('login')
-  }
-
  
- function controladorLogout(req, res) {
-  res.render('logout', {usuario: req.session.user})
-  req.session.destroy();
-  }
-   
-
-function controladorLoging(req, res) {
-
-    if(req.isAuthenticated) 
-      res.json({username: req.session.user})
-    else 
-      return res.redirect("/")
-    
-}
-
-function controladorLoginp(req, res) {
+ function controladorLoginp(req, res) {
   
   req.session.user = req.body.username
  
   if(!req.isAuthenticated) { 
-      return res.redirect('/')
+      return res.status(401)
   } else {
-      return res.redirect('/formulario')
+     res.status(200).json({"usuario": req.session.user })
   }
   
 }
 
 
-function controladorVolveralogin(req, res) {
-  setTimeout(() => {
-   return res.redirect('/')
-   }, 2000);
+ function controladorLogout(req, res) {
+   req.session.destroy();
  }
 
 
- function controladorIraRegistro(req, res) {
-  res.render('registro')
- }
+ async function controladorRegistro(req, res) {
+  res.status(201);
+  const objeto = req.body; 
 
- function controladorIraLogin(req, res) {
-  return res.redirect('/')
- }
- 
+  res.json(objeto)
 
- function controladorFailLogin(req, res) {
-  res.render('faillogin')
- }
-
- 
- function controladorFailRegister(req, res) {
-   res.render('failregister')
-  }
-
+ }   
 
   
-  
-export { controladorWebLogin, controladorLoging, controladorLoginp, controladorLogout, controladorVolveralogin, controladorIraRegistro, controladorIraLogin, controladorFailLogin, controladorFailRegister }
+export { controladorLoginp, controladorLogout, controladorRegistro }

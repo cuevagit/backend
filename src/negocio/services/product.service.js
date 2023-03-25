@@ -18,22 +18,62 @@ class ProductService {
     async listarProducto() {
         try {
                 const listadoProducts = await Products.listarProducto()
-                const products = []
-                listadoProducts.forEach(d => {
-                    products.push(d.datos())
-                });
-                return products
+                if(listadoProducts){
+                    const products = []
+                    listadoProducts.forEach(d => {
+                        products.push(d.datos())
+                    });
+                    return products
+                } else
+                    return null
+        } catch (error) {
+            return error
+        }
+    }
+
+
+    async actualizarProducto(objeto) {
+        try {
+            const product = new Productos(objeto);
+            const updateProduct = await Products.actualizarProducto(product)
+            return updateProduct  
         } catch (error) {
             return error
         }
     }
     
 
+    async eliminarProducto(objeto) {
+        try {
+            const product = new Productos(objeto);
+            const deleteProduct = await Products.eliminarProducto(product)
+            return deleteProduct  
+        } catch (error) {
+            return error
+        }
+    }
+
+
     async productosFaker(objeto) {
         const productosFaker = new ContenedorFaker(objeto)
         const listadoProductoFaker = await productosFaker.getProductosTest();
         return listadoProductoFaker
     }
+
+
+    async listarProductoPorId(objeto) {
+        try {
+            const producto = await Products.listarProductoPorId(objeto)
+            if(producto)
+             return producto.datos()
+            else 
+             return null
+        } catch (error) {
+            return error
+        }
+    }
+
+
 
 }
 

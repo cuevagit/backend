@@ -1,12 +1,11 @@
 import express from 'express'
 import routerApi from '../controllers/routers/routerApi.js'
 import routerApiTest from '../controllers/routers/routerApiTest.js'
-import routerWeb from '../controllers/routers/routerWeb.js'
+import routerInfo from '../controllers/routers/routerInfo.js'
 import routerLogin from '../controllers/routers/routerLogin.js'
 import { engine } from 'express-handlebars'  //handlebars
 import { Server as HTTPServer } from 'http'
 import { Server as IOServer } from 'socket.io'
-import websocket from '../negocio/utils/webSocket.js'
 import logIn from '../negocio/authentication/logIn.js'
 import mongoose from 'mongoose'
 import {MONGOOSE} from '../config/config.js'
@@ -39,7 +38,7 @@ logIn(servidor);
 //Middlewares para los routers
 servidor.use('/api/productos', routerApi)
 servidor.use('/api/productos-test', routerApiTest)
-servidor.use('/', routerWeb)
+servidor.use('/', routerInfo)
 servidor.use('/', routerLogin)
 servidor.use('/', routerApiRandom)
 
@@ -90,15 +89,21 @@ const puerto = argv.port
   })
 }
 
+function desconectar() {
+  return new Promise((resolve, reject) => {
+    httpServer.close(err => {
+          resolve(true)
+      })
+  })
+}
+
 
 
 loggerRutaNoDisponible(servidor, io)
 
 
-websocket(io)
 
-
-export { conectar }
+export { conectar, desconectar }
 
 
 
