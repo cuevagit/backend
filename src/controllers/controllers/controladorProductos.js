@@ -37,7 +37,7 @@ async function controladorGetProductos(req, res) {
             res.status(500)
             loggerError(req, productos.message)
         } else
-            res.json(productos);
+            res.status(200).json(productos);
         }
 }
 
@@ -73,8 +73,10 @@ async function controladorDeleteProductosSegunId(req, res) {
         res.status(404);
         res.json({ mensaje: `no se encontraron productos` });
     } else {
-        if(productos.message)
-        loggerError(req, productos.message)
+        if(productos.message){
+            res.status(500)
+            loggerError(req, productos.message)
+        }
        else {
         req.body._id = req.params.id;
         const resul = await productService.eliminarProducto(req.body);
@@ -99,7 +101,7 @@ async function controladorDeleteProductosSegunId(req, res) {
         res.status(500)
         loggerError(req, productos.message)
     } else
-        res.json(productos);
+        res.status(200).json(productos);
     }
  }
 
@@ -109,6 +111,7 @@ async function controladorGetProductosTest(req, res) {
         const productos = await productService.productosFaker();
 
         if(productos.message) {
+            res.status(500)
             loggerError(req, productos.message)
             return error
         } else

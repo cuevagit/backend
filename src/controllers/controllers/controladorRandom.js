@@ -21,7 +21,7 @@ import {numerosRandom} from '../../negocio/calculo.js'
   }
   )*/
   //console.log(numerosRandomLista)
-  res.json(numerosRandomLista);
+  res.status(200).json(numerosRandomLista);
 
   }
 

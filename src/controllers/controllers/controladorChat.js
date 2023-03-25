@@ -10,7 +10,7 @@ async function controladorPostChat(req, res) {
 
         if(resul.message) {
             loggerError(req, resul.message)
-            res.json(objeto)
+            res.json({"mensaje": resul.message})
         } else
             res.json(objeto)
 

@@ -20,9 +20,7 @@
  async function controladorRegistro(req, res) {
   res.status(201);
   const objeto = req.body; 
-
   res.json(objeto)
-
  }   
 
   
