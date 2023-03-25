@@ -1,11 +1,5 @@
 [
   {
-    "_id": "8bbff93a-afc7-451e-9f7a-4af39694f01f",
-    "title": "Rifle Aire Comprimido",
-    "price": 2000,
-    "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"
-  },
-  {
     "_id": "9999f33b-610f-4137-992a-ff288427db4f",
     "title": "Rifle Aire Comprimido",
     "price": 2000,
@@ -283,6 +277,18 @@
   },
   {
     "_id": "bd84a147-2c7b-45c8-a6fd-f4be7519a577",
+    "title": "Rifle Aire Comprimido Ejemplo",
+    "price": 2000,
+    "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"
+  },
+  {
+    "_id": "cfe3de54-7ffd-42c5-bd09-758b094518bb",
+    "title": "Rifle Aire Comprimido Ejemplo",
+    "price": 2000,
+    "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"
+  },
+  {
+    "_id": "1cc52b45-5cad-4004-ba42-0baaff8af5ad",
     "title": "Rifle Aire Comprimido Ejemplo",
     "price": 2000,
     "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"

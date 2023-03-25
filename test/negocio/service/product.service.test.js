@@ -53,7 +53,7 @@ describe('pruebo mi servicio de productos', () => {
         //PUT de Productos
         it('actualización de un producto', async () => {
 
-            const id = 'e127f57f-3de2-4b41-97ce-330875ab8f01'
+            const id = '8bbff93a-afc7-451e-9f7a-4af39694f01f'
 
             const productoPrueba = "Rifle Aire Comprimido PCP"
             const pricePrueba = 3000
@@ -91,7 +91,7 @@ describe('pruebo mi servicio de productos', () => {
     //DELETE de Productos
     it('eliminación de un producto', async () => {
 
-        const id = 'e127f57f-3de2-4b41-97ce-330875ab8f01'
+        const id = '8bbff93a-afc7-451e-9f7a-4af39694f01f'
 
         const existe =  await productService.listarProductoPorId({"_id": id})
 
