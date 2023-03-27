@@ -25,7 +25,7 @@
           body: JSON.stringify(data),
           headers: {"Content-type": "application/json; charset=UTF-8", "Access-Control-Allow-Origin": "*"}
         })
-        setTimeout("location.reload()");
+        location.reload();
 
       })
 
@@ -66,7 +66,7 @@
         headers: {"Content-type": "application/json; charset=UTF-8", "Access-Control-Allow-Origin": "*"}
       })
 
-      setTimeout("location.reload()");
+      location.reload();
 
     })
 
@@ -96,7 +96,7 @@ boton.onclick = async(e) => {
     body: JSON.stringify(producto),
     headers: {"Content-type": "application/json; charset=UTF-8", "Access-Control-Allow-Origin": "*"}
   })
-  setTimeout("location.reload()");
+  location.reload();
 };
 
 form.reset

@@ -1343,3 +1343,4 @@
 {"level":40,"time":1679764496658,"pid":11608,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /formulario/login y el metodo: POST no estan implementados"}
 {"level":40,"time":1679764507160,"pid":11608,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /login y el metodo: POST no estan implementados"}
 {"level":40,"time":1679764994799,"pid":10336,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /registro y el metodo: POST no estan implementados"}
+{"level":40,"time":1679876951928,"pid":9512,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: / y el metodo: GET no estan implementados"}
