@@ -22,6 +22,7 @@ const servidor = express()
 const httpServer = new HTTPServer(servidor)
 const io = new IOServer(httpServer)
 
+//Cors
 servidor.use(cors());
 
 
@@ -51,7 +52,6 @@ servidor.use(express.static('public'))
 servidor.engine('handlebars', engine())
 servidor.set('view engine', 'handlebars')
 
-//Cors
 
 const yargs = parseArgs(process.argv.slice(2))
 
