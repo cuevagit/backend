@@ -22,6 +22,7 @@ const servidor = express()
 const httpServer = new HTTPServer(servidor)
 const io = new IOServer(httpServer)
 
+servidor.use(cors());
 
 
 //Middlewares para resolver los datos que viene por el Post
@@ -51,11 +52,6 @@ servidor.engine('handlebars', engine())
 servidor.set('view engine', 'handlebars')
 
 //Cors
-servidor.use(cors(
- // {origin: ''}
-   )
-)
-
 
 const yargs = parseArgs(process.argv.slice(2))
 

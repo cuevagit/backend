@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso Backend</title>
+    <body style="background-color: rgb(79, 159, 170);">
+
+
+    <div className="flex flex-center">
+        <div className="orden">
+        <form id="formulario">    
+        <h1><strong>Ingrese los datos del Producto: </strong> </h1>
+        <br></br>
+        <label>Nombre del Producto: </label>         
+        <input type="text" id="title" name="title" placeholder="Nombre del Producto" class="mt-20 input input-bordered w-full max-w-xs" />   
+        <br></br>
+        <br></br>
+        <label>
+            Precio:
+            <input type="text" id="price" name="price" placeholder="Precio" class="input input-bordered w-full max-w-xs" />    </label>
+        <br></br>
+        <br></br>
+    
+        <label>
+            Imágen:
+            <input type="text" id="thumbnail" name="thumbnail" placeholder="Imágen" class="input input-bordered w-full max-w-xs" />    </label>
+
+        <br></br>
+        <br></br>
+        <Button type="submit" id="enviar" className="botonenviar">Enviar</Button>      
+        <Button type="submit" style="display: none;" id="modificar" className="botonmodificar">Modificar</Button>      
+
+        </form>
+
+        <br></br>
+
+        <table style="width: 500px" id="tablaproductos" class="table table-striped table-bordered table-secondary">
+
+        </div>
+
+        <script src="js/index.js"></script>
+    </body>
+
+</html>

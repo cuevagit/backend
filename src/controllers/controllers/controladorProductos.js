@@ -12,8 +12,7 @@ async function controladorPostProductos(req, res) {
     const objeto = req.body;
     objeto._id = randomUUID();
 
-   
-    const resul = await productService.grabarProducto(objeto)
+   const resul = await productService.grabarProducto(objeto)
 
     if(resul.message){
         res.status(500)

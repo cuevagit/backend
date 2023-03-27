@@ -72,7 +72,7 @@ class Contenedor{
             
           if(objetoBuscado){ 
             await this.cliente(this.tabla).update(objeto).where("_id", "=", objeto._id);
-            return objetoBuscado;
+            return objeto;
         } else {
             return {"mensaje": `No existe el producto con el id: ${objeto._id}`}
         }

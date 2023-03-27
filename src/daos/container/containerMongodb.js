@@ -80,7 +80,7 @@ class ContainerMongodb{
       if(objetoActualizar){ 
         try {
             await this.coleccion.updateMany({_id: objeto._id}, {$set: {"title": objeto.title, "price": objeto.price, "thumbnail": objeto.thumbnail}})
-            return objetoActualizar;
+            return objeto;
         }
         catch(error){
             return error

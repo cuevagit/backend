@@ -6,7 +6,7 @@
   "main": "src/main.js",
   "scripts": {
     "start": "nodemon main.js",
-    "test": "nodemon --exec mocha --recursive"
+    "test": "nodemon --exec mocha --timeout 10000 --recursive"
   },
   "repository": {
     "type": "git",

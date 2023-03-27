@@ -7,6 +7,7 @@ import {productService} from '../../../src/negocio/services/product.service.js'
 
 axios.defaults.baseURL = 'http://localhost:8080/api/productos'
 
+
 describe('pruebo mi servicio de productos', () => {
     // antes de TODAS las pruebas
     before(async () => {
@@ -53,7 +54,7 @@ describe('pruebo mi servicio de productos', () => {
         //PUT de Productos
         it('actualización de un producto', async () => {
 
-            const id = '8bbff93a-afc7-451e-9f7a-4af39694f01f'
+            const id = '645190d4-6cec-4fe6-b682-ea6af2b4d308'
 
             const productoPrueba = "Rifle Aire Comprimido PCP"
             const pricePrueba = 3000
@@ -91,7 +92,7 @@ describe('pruebo mi servicio de productos', () => {
     //DELETE de Productos
     it('eliminación de un producto', async () => {
 
-        const id = '8bbff93a-afc7-451e-9f7a-4af39694f01f'
+        const id = '645190d4-6cec-4fe6-b682-ea6af2b4d308'
 
         const existe =  await productService.listarProductoPorId({"_id": id})
 
@@ -139,13 +140,18 @@ describe('pruebo mi servicio de productos', () => {
     //GET de Producto por ID
     it('ver producto por ID', async () => {
 
-        const id = '9999f33b-610f-4137-992a-ff288427db4f'
+        const id = 'c7216d96-37df-45b7-86a8-aecf5478d1cc'
+
+        const existe =  await productService.listarProductoPorId({"_id": id})
+
+       if(!existe) 
+          throw new Error(`no existe producto con el id: ${id}`)
 
         const { data: resultado, status } = await axios.get(`/${id}`)
 
+        if(status === 404) throw new Error(`no existe producto con el id: ${id}`)
         assert.strictEqual(status, 200)
         if (!id) throw new Error('el id del producto a buscar no tiene valor')
-        if (!resultado) throw new Error(`no existe producto con el id: ${id}`)
         if(!resultado._id) throw new Error('No tiene valor el campo ID')
         if(!resultado.title) throw new Error('No tiene valor el campo titulo')
         if(!resultado.price) throw new Error('No tiene valor el campo precio')
@@ -154,7 +160,9 @@ describe('pruebo mi servicio de productos', () => {
         if (typeof resultado.title !== 'string') throw new Error('el producto tiene un titulo con tipo no string')
         if (typeof resultado.price !== 'number') throw new Error('el producto tiene un precio con tipo no entero')
         if (typeof resultado.thumbnail !== 'string') throw new Error('el producto tiene una url de imagen con tipo no string') 
-    })
+ 
+
+   })
 
 })
 
