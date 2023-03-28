@@ -15,6 +15,7 @@ import loggerMiddleware from '../negocio/utils/pino.js'
 import loggerRutaNoDisponible from '../negocio/utils/pinoRutaNoDisponible.js'
 import parseArgs from 'yargs/yargs'
 import cors from 'cors'
+import { multer_function } from '../negocio/utils/multer.js'
 
 
 
@@ -47,6 +48,9 @@ servidor.use('/', routerApiRandom)
 servidor.use('/views', express.static('views'))
 servidor.use(express.static('public'))
 
+//multer
+multer_function()
+//
 
 //handlebars
 servidor.engine('handlebars', engine())

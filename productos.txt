@@ -1,158 +1,32 @@
 [
   {
-    "_id": "2a87936b-6660-4d32-a1ff-c5db53865ca3",
-    "title": "Rifle Aire Comprimido Ejemplo",
-    "price": 2000,
-    "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"
-  },
-  {
-    "_id": "c7216d96-37df-45b7-86a8-aecf5478d1cc",
-    "title": "Rifle Aire Comprimido Ejemplo",
-    "price": 2000,
-    "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"
-  },
-  {
-    "_id": "713eae54-00c8-4311-982a-e07183056f3e",
-    "title": "Rifle Aire Comprimido Ejemplo",
-    "price": 2000,
-    "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"
-  },
-  {
-    "_id": "3bef5be1-88eb-4071-9781-46fedc6fd9f6",
-    "title": "Rifle Aire Comprimido Ejemplo",
-    "price": 2000,
-    "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"
-  },
-  {
-    "_id": "f5a61db7-ef8a-4da1-9b34-7d6f8ea73725",
-    "title": "Rifle Aire Comprimido Ejemplo",
-    "price": 2000,
-    "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"
-  },
-  {
-    "_id": "eb741e34-d31a-4b58-80cb-13b9f0e35e70",
-    "title": "Rifle Aire Comprimido Ejemplo",
-    "price": 2000,
-    "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"
-  },
-  {
-    "_id": "2ba1a69b-0d39-4619-a785-339020c4d4ed",
-    "title": "Rifle Aire Comprimido Ejemplo",
-    "price": 2000,
-    "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"
-  },
-  {
-    "_id": "751a0b56-a84c-4d47-9184-f680783a7a1e",
-    "title": "Rifle Aire Comprimido Ejemplo",
-    "price": 2000,
-    "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"
-  },
-  {
-    "_id": "c194a873-b1e4-4826-86cd-56429e972053",
-    "title": "Rifle Aire Comprimido Ejemplo",
-    "price": 2000,
-    "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"
-  },
-  {
-    "_id": "441e4363-7dc9-418d-ab0c-20144b45bf52",
-    "title": "Rifle Aire Comprimido Ejemplo",
-    "price": 2000,
-    "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"
-  },
-  {
-    "_id": "8c071824-fbb8-4790-a44c-caee531f2d3e",
-    "title": "Rifle Aire Comprimido Ejemplo",
-    "price": 2000,
-    "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"
-  },
-  {
-    "_id": "0a9f1e93-4004-4f43-b4a2-8b7ef5da7b72",
-    "title": "Rifle Aire Comprimido Ejemplo",
-    "price": 2000,
-    "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"
-  },
-  {
-    "_id": "2e376e0d-e5da-4da1-9580-829ca1d0d313",
-    "title": "Rifle Aire Comprimido Ejemplo",
-    "price": 2000,
-    "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"
-  },
-  {
-    "_id": "1a8fb85c-bb7b-465f-aa03-d7381a97cd1c",
-    "title": "Rifle Aire Comprimido Ejemplo",
-    "price": 2000,
-    "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"
-  },
-  {
     "_id": "ae4b457f-be42-421e-8ead-c67254a2de3c",
     "title": "Rifle Aire Comprimido Ejemplo",
-    "price": 2000,
-    "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"
-  },
-  {
-    "_id": "5ea8b67d-3dd9-4603-9e08-c365731f8ef8",
-    "title": "Rifle Aire Comprimido Ejemplo",
-    "price": 2000,
-    "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"
-  },
-  {
-    "_id": "9e5b534a-4e93-4c84-b4c5-a7d15f04af67",
-    "title": "Rifle Aire Comprimido Ejemplo",
-    "price": 2000,
-    "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"
-  },
-  {
-    "_id": "d54a90a2-710c-4a20-ae96-f20ecd460692",
-    "title": "Rifle Aire Comprimido Ejemplo",
-    "price": 2000,
-    "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"
-  },
-  {
-    "_id": "f6656c43-c6b7-4b41-a87d-bf3dc96e2c9a",
-    "title": "Rifle Aire Comprimido Ejemplo",
-    "price": 2000,
-    "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"
-  },
-  {
-    "_id": "30fde0b3-f04c-4d1a-9ec2-871aac10cec3",
-    "title": "Rifle Aire Comprimido Ejemplo",
-    "price": 2000,
-    "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"
-  },
-  {
-    "_id": "34d8101d-f5d9-40a7-8b3a-ca08b453f8bc",
-    "title": "Rifle Aire Comprimido Ejemplo",
-    "price": 2000,
-    "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"
-  },
-  {
-    "_id": "e6933fc7-980e-42db-b8b8-2d4acf2571eb",
-    "title": "Rifle Aire Comprimido Ejemplo",
-    "price": 2000,
-    "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"
-  },
-  {
-    "_id": "2405ae28-df0e-43c3-91e2-9da3ae82c99e",
-    "title": "Rifle Aire Comprimido Ejemplo",
-    "price": 2000,
-    "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"
+    "price": "5000",
+    "thumbnail": "../uploads/docente ver.jpg"
   },
   {
     "_id": "627272c9-cd21-428f-92cd-501773c164e7",
     "title": "Rifle Aire Comprimido Ejemplo",
-    "price": 2000,
-    "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"
-  },
-  {
-    "_id": "149b2730-b046-48eb-a836-d469b8e457cf",
-    "title": "Rifle Aire Comprimido Ejemplo",
-    "price": 2000,
-    "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"
+    "price": "2000",
+    "thumbnail": "../uploads/primeraño.jpg"
   },
   {
     "_id": "a92aeaf5-e918-43d5-97f3-b1c31ae0ffd5",
     "title": "Rifle Aire Comprimido Ejemplo",
     "price": 2000,
     "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"
+  },
+  {
+    "_id": "168f22c9-d685-4f8b-915e-38105c6c7317",
+    "title": "probarid3",
+    "price": "2000",
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/12_avatar-256.png"
+  },
+  {
+    "_id": "cecad1c7-57c0-4f6c-8eee-ad367b46a43d",
+    "title": "probarimagen777",
+    "price": "4000",
+    "thumbnail": "../uploads/docente ver.jpg"
   }
 ]

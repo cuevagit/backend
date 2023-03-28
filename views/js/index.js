@@ -32,6 +32,8 @@
 
       let botoneditar = document.getElementById(id2)
       botoneditar.addEventListener('click', async(e) => {
+        document.getElementById("modificar").style.display = ''
+
         e.preventDefault();
         await fetch(`http://localhost:8080/api/productos/${data._id}`, {method: "GET"})
         .then(response => response.json())
@@ -39,10 +41,10 @@
           elementoelegido = data._id,
           document.getElementById('title').value = data.title,
           document.getElementById('price').value = data.price,
-          document.getElementById('thumbnail').value = data.thumbnail
+          document.getElementById('miArchivo').value = data.thumbnail
       })
 
-      document.getElementById("modificar").style.display = ''
+      location.reload();
 
      });
     });
@@ -54,10 +56,13 @@
     botonmodificar.addEventListener('click', async(e) => {
       e.preventDefault();
 
+      let thumbnail = document.getElementById('miArchivo').value
+      thumbnail = thumbnail.replace("C:\\fakepath\\", "../uploads/")
+
       const objeto = {
         title: document.getElementById('title').value,
         price: document.getElementById('price').value,
-        thumbnail: document.getElementById('thumbnail').value
+        thumbnail: thumbnail
       }
 
       await fetch(`http://localhost:8080/api/productos/${elementoelegido}`, {
@@ -82,7 +87,8 @@ boton.onclick = async(e) => {
 
   const title = document.getElementById('title').value
   const price = document.getElementById('price').value
-  const thumbnail = document.getElementById('thumbnail').value
+  let thumbnail = document.getElementById('miArchivo').value
+  thumbnail = thumbnail.replace("C:\\fakepath\\", "../uploads/")
 
   const producto = {
     title: title,
@@ -98,6 +104,31 @@ boton.onclick = async(e) => {
   })
   location.reload();
 };
+
+
+const input = document.getElementById('miArchivo')
+
+
+input.addEventListener('change', () => {
+  uploadFile(input.files[0])
+  document.getElementById("modificar").style.display = ''
+})
+
+
+const uploadFile = file => {
+  const fd = new FormData()
+  fd.append('miArchivo', file)
+
+
+  fetch('http://localhost:8080/api/productos/imagenes', {
+    method: 'POST',
+    body: fd
+  })
+    .then(res => res.json())
+    .then(json => console.log(json))
+    .catch(err => console.error(err))
+}
+
 
 form.reset
 

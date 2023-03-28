@@ -118,5 +118,16 @@ async function controladorGetProductosTest(req, res) {
 }
 
 
+function controladorSubirImagenProducto(req, res){
+    const file = req.file
 
-export { controladorGetProductos, controladorPostProductos, controladorPutProductosSegunId, controladorDeleteProductosSegunId, controladorGetProductosTest, controladorGetProductoSegunId}
+    if (!file) {
+      res.status(400)
+      res.json({"mensaje": "El archivo fue subido con éxito"})
+    }
+      res.redirect({"mensaje": "Hubo un error al subir el archivo"})
+}
+
+
+
+export { controladorGetProductos, controladorPostProductos, controladorPutProductosSegunId, controladorDeleteProductosSegunId, controladorGetProductosTest, controladorGetProductoSegunId, controladorSubirImagenProducto}
