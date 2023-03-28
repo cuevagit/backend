@@ -1,32 +1,44 @@
 [
   {
-    "_id": "ae4b457f-be42-421e-8ead-c67254a2de3c",
-    "title": "Rifle Aire Comprimido Ejemplo",
-    "price": "5000",
-    "thumbnail": "../uploads/docente ver.jpg"
+    "_id": "6250194a-1339-4f07-acf5-db08b2332d31",
+    "title": "probarid3",
+    "price": "1500",
+    "thumbnail": "../uploads/RobloxScreenShot20171119_210605942.png"
   },
   {
-    "_id": "627272c9-cd21-428f-92cd-501773c164e7",
-    "title": "Rifle Aire Comprimido Ejemplo",
+    "_id": "5254306a-af1f-4b12-94b7-70bbe0e97ca3",
+    "title": "probarid3",
     "price": "2000",
+    "thumbnail": "../uploads/RobloxScreenShot20201009_113642851.png"
+  },
+  {
+    "_id": "78fc6601-7a4f-4ab8-9ebf-1646e8ae70c7",
+    "title": "probarid3",
+    "price": "4000",
+    "thumbnail": "../uploads/RobloxScreenShot20171119_210605942.png"
+  },
+  {
+    "_id": "47e7f627-5bff-4426-9013-96a08ef92e6a",
+    "title": "probarid5",
+    "price": "4000",
+    "thumbnail": "../uploads/RobloxScreenShot20171119_210605942.png"
+  },
+  {
+    "_id": "7b838979-7a32-4db9-b77e-3e45502eeb26",
+    "title": "Rifle Aire Comprimido Ejemplo",
+    "price": "6000",
+    "thumbnail": "../uploads/DSCN5814.JPG"
+  },
+  {
+    "_id": "4ffce52e-c6dc-49aa-9349-11d41211b8b1",
+    "title": "Rifle Aire Comprimido Ejemplo",
+    "price": "5000",
     "thumbnail": "../uploads/primeraño.jpg"
   },
   {
-    "_id": "a92aeaf5-e918-43d5-97f3-b1c31ae0ffd5",
+    "_id": "c4e59364-7bc2-46b8-9e3d-29690d4ab9c5",
     "title": "Rifle Aire Comprimido Ejemplo",
-    "price": 2000,
-    "thumbnail": "https://cdn.glitch.global/0e3ab45b-a006-4d79-9868-f7eb1f99b246/mossberg.png?v=1667993087620"
-  },
-  {
-    "_id": "168f22c9-d685-4f8b-915e-38105c6c7317",
-    "title": "probarid3",
-    "price": "2000",
-    "thumbnail": "https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/12_avatar-256.png"
-  },
-  {
-    "_id": "cecad1c7-57c0-4f6c-8eee-ad367b46a43d",
-    "title": "probarimagen777",
-    "price": "4000",
-    "thumbnail": "../uploads/docente ver.jpg"
+    "price": "5000",
+    "thumbnail": "../uploads/DSCN5814.JPG"
   }
 ]

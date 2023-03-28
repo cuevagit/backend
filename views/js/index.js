@@ -1,6 +1,8 @@
   mostrar_productos()
 
-  
+   document.getElementById("modificar").style.display = 'none'
+
+
   function mostrar_productos(){
 
 
@@ -35,6 +37,7 @@
         document.getElementById("modificar").style.display = ''
 
         e.preventDefault();
+
         await fetch(`http://localhost:8080/api/productos/${data._id}`, {method: "GET"})
         .then(response => response.json())
         .then(data =>    {
@@ -111,7 +114,6 @@ const input = document.getElementById('miArchivo')
 
 input.addEventListener('change', () => {
   uploadFile(input.files[0])
-  document.getElementById("modificar").style.display = ''
 })
 
 
@@ -124,9 +126,6 @@ const uploadFile = file => {
     method: 'POST',
     body: fd
   })
-    .then(res => res.json())
-    .then(json => console.log(json))
-    .catch(err => console.error(err))
 }
 
 
