@@ -3,42 +3,24 @@
     "_id": "6250194a-1339-4f07-acf5-db08b2332d31",
     "title": "probarid3",
     "price": "1500",
-    "thumbnail": "../uploads/RobloxScreenShot20171119_210605942.png"
+    "thumbnail": "../uploads/comunicados.png"
   },
   {
     "_id": "5254306a-af1f-4b12-94b7-70bbe0e97ca3",
     "title": "probarid3",
     "price": "2000",
-    "thumbnail": "../uploads/RobloxScreenShot20201009_113642851.png"
-  },
-  {
-    "_id": "78fc6601-7a4f-4ab8-9ebf-1646e8ae70c7",
-    "title": "probarid3",
-    "price": "4000",
-    "thumbnail": "../uploads/RobloxScreenShot20171119_210605942.png"
+    "thumbnail": "../uploads/comunicados.png"
   },
   {
     "_id": "47e7f627-5bff-4426-9013-96a08ef92e6a",
     "title": "probarid5",
     "price": "4000",
-    "thumbnail": "../uploads/RobloxScreenShot20171119_210605942.png"
-  },
-  {
-    "_id": "7b838979-7a32-4db9-b77e-3e45502eeb26",
-    "title": "Rifle Aire Comprimido Ejemplo",
-    "price": "6000",
-    "thumbnail": "../uploads/DSCN5814.JPG"
+    "thumbnail": "../uploads/tutoria.png"
   },
   {
     "_id": "4ffce52e-c6dc-49aa-9349-11d41211b8b1",
     "title": "Rifle Aire Comprimido Ejemplo",
     "price": "5000",
     "thumbnail": "../uploads/primeraño.jpg"
-  },
-  {
-    "_id": "c4e59364-7bc2-46b8-9e3d-29690d4ab9c5",
-    "title": "Rifle Aire Comprimido Ejemplo",
-    "price": "5000",
-    "thumbnail": "../uploads/DSCN5814.JPG"
   }
 ]
