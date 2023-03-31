@@ -1,26 +1,20 @@
 [
   {
-    "_id": "6250194a-1339-4f07-acf5-db08b2332d31",
-    "title": "probarid3",
-    "price": "1500",
-    "thumbnail": "../uploads/comunicados.png"
+    "_id": "12f0b579-d55f-4485-89a1-097cbe9f9be0",
+    "title": "graphql3",
+    "price": 3000,
+    "thumbnail": "../uploads/309698625_845547596805326_5146914336028618624_n.jpg"
   },
   {
-    "_id": "5254306a-af1f-4b12-94b7-70bbe0e97ca3",
-    "title": "probarid3",
-    "price": "2000",
-    "thumbnail": "../uploads/comunicados.png"
+    "_id": "5a0990a8-8f90-4adf-a7e5-0ef8c3670a1d",
+    "title": "graphql3",
+    "price": 2500,
+    "thumbnail": "../uploads/309698625_845547596805326_5146914336028618624_n.jpg"
   },
   {
-    "_id": "47e7f627-5bff-4426-9013-96a08ef92e6a",
-    "title": "probarid5",
-    "price": "4000",
-    "thumbnail": "../uploads/tutoria.png"
-  },
-  {
-    "_id": "4ffce52e-c6dc-49aa-9349-11d41211b8b1",
-    "title": "Rifle Aire Comprimido Ejemplo",
-    "price": "5000",
+    "_id": "d61eccc0-1efb-4c7c-8ee1-e4893fb3315a",
+    "title": "graphql3",
+    "price": 5000,
     "thumbnail": "../uploads/primeraño.jpg"
   }
 ]

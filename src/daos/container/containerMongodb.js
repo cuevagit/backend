@@ -15,7 +15,7 @@ class ContainerMongodb{
  
         try {
             await this.coleccion.insertOne(objeto)
-            return 'Id del objeto guardado: ' + this.coleccion._id
+            return objeto
         } 
         catch (error){
             return error

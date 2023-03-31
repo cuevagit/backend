@@ -16,6 +16,7 @@ import loggerRutaNoDisponible from '../negocio/utils/pinoRutaNoDisponible.js'
 import parseArgs from 'yargs/yargs'
 import cors from 'cors'
 import { multer_function } from '../negocio/utils/multer.js'
+import { graphqlMiddleware } from '../negocio/middlewares/graphQL.js'
 
 
 
@@ -25,6 +26,7 @@ const io = new IOServer(httpServer)
 
 //Cors
 servidor.use(cors());
+servidor.use('/graphql', graphqlMiddleware)
 
 
 //Middlewares para resolver los datos que viene por el Post
@@ -32,6 +34,7 @@ servidor.use(cors());
 servidor.use(express.json())
 servidor.use(express.urlencoded({ extended: true }))
 servidor.use(loggerMiddleware)
+
 
 
 ///LOGIN CON SESSION Y PASSPORT

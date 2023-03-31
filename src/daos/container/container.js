@@ -17,7 +17,7 @@ class Contenedor{
  
         try {
             const data = await this.cliente(this.tabla).insert(objeto);
-            return data[0].toString()
+            return objeto
         }
        catch(error){
         return error

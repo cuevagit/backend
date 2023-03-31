@@ -32,7 +32,7 @@ class Container {
         try {
             this.#productos.push(objeto)
             await fs.promises.writeFile(this.#filename, JSON.stringify(this.#productos, null, 2))
-            return 'Id del objeto guardado: ' + this.#productos[this.#productos.length - 1].id
+            return objeto
         }
         catch (error) {
             return error
