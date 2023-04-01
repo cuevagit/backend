@@ -5,29 +5,42 @@ paths:
         - productos
       summary: "query"
       description: "query { listarProducto {_id, title, price, thumbnail} } "
+      operationId: listarProducto
   /graphql (busca producto por id):
     get:
       tags:
         - productos
       summary: "query"
       description:  "query { listarProductoPorId(_id: ''5254306a-af1f-4b12-94b7-70bbe0e97ca3'') {_id, title, price, thumbnail} } "
+      operationId: listarProductoPorId
+      parameters: 
+       - name: _id
+         description: ID del Producto
   /graphql (graba producto):
     post:
       tags:
         - productos
       summary: "query"
       description:  "mutation { grabarProducto(datos: {title: ''productograph'', price: 2000, thumbnail: ''../uploads/primeraño.jpg''}) {_id, title, price, thumbnail} } "
-  
+      operationId: grabarProducto
   /graphql (actualiza producto):
     post:
       tags:
         - productos
       summary: "query"
       description:  "mutation { actualizarProducto(_id: ''567eae58-f012-45cc-a2e9-04349face639''', datos: {title: ''productograph''', price: 2000, thumbnail: ''../uploads/primeraño.jpg'''}) {_id, title, price, thumbnail} } "
+      operationId: actualizarProducto
+      parameters: 
+       - name: _id
+         description: ID del Producto
   /graphql (eliminar producto):
     post:
       tags:
         - productos
       summary: "query"
       description:  "mutation { eliminarProducto(_id: {_id: ''4ffce52e-c6dc-49aa-9349-11d41211b8b1'''}) {_id, title, price, thumbnail} } "
+      operationId: eliminarProducto
+      parameters: 
+       - name: _id
+         description: ID del Producto
   

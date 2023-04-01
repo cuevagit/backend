@@ -1357,3 +1357,4 @@
 {"level":40,"time":1680288302280,"pid":2544,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /api/docs%7D y el metodo: GET no estan implementados"}
 {"level":40,"time":1680299436654,"pid":7456,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /api/ y el metodo: GET no estan implementados"}
 {"level":40,"time":1680307177259,"pid":4208,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /graphql%20(busca%20producto%20por%20id) y el metodo: GET no estan implementados"}
+{"level":40,"time":1680361709386,"pid":1280,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /productos y el metodo: GET no estan implementados"}
