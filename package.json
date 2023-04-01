@@ -36,7 +36,7 @@
     "express-pino-logger": "^6.0.0",
     "express-session": "^1.17.3",
     "forever": "^0.14.2",
-    "graphql": "^16.6.0",
+    "graphql": "15.8",
     "gzip": "^0.1.0",
     "http": "^0.0.1-security",
     "jsonwebtoken": "^9.0.0",
@@ -55,6 +55,8 @@
     "socket.io": "^4.5.4",
     "socketio": "^1.0.0",
     "sqlite3": "^5.1.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^4.6.2",
     "yargs": "^17.6.2"
   },
   "devDependencies": {

@@ -17,7 +17,8 @@ import parseArgs from 'yargs/yargs'
 import cors from 'cors'
 import { multer_function } from '../negocio/utils/multer.js'
 import { graphqlMiddleware } from '../negocio/middlewares/graphQL.js'
-
+import swaggerUi from 'swagger-ui-express'
+import {swaggerSpecs} from '../negocio/utils/swaggerSpecs.js'
 
 
 const servidor = express()
@@ -51,9 +52,13 @@ servidor.use('/', routerApiRandom)
 servidor.use('/views', express.static('views'))
 servidor.use(express.static('public'))
 
+
 //multer
 multer_function()
-//
+
+//Swagger
+servidor.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
+
 
 //handlebars
 servidor.engine('handlebars', engine())

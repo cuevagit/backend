@@ -35,13 +35,7 @@ export async function grabarProducto({ datos }) {
     
     datos._id = randomUUID();
 
-    const existe = await productService.listarProductoPorId(objeto)
-
-    if(!existe) {
-        return `No existe el producto con el ID ${objeto._id}`
-    }
-
-    
+   
     const resul = await productService.grabarProducto(datos)
 
     if(resul.message){

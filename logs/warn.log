@@ -1350,3 +1350,9 @@
 {"level":40,"time":1679971233539,"pid":3144,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: / y el metodo: GET no estan implementados"}
 {"level":40,"time":1680052777420,"pid":1124,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /graphq y el metodo: GET no estan implementados"}
 {"level":40,"time":1680215489873,"pid":8688,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /api/productos/45b67115-383c-465d-aacd-575f61120065 y el metodo: POST no estan implementados"}
+{"level":40,"time":1680283123377,"pid":11280,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /graphiql y el metodo: GET no estan implementados"}
+{"level":40,"time":1680283195809,"pid":11280,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /favicon.ico y el metodo: GET no estan implementados"}
+{"level":40,"time":1680287783904,"pid":10132,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /productos y el metodo: GET no estan implementados"}
+{"level":40,"time":1680287788380,"pid":10132,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /docs y el metodo: GET no estan implementados"}
+{"level":40,"time":1680288302280,"pid":2544,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /api/docs%7D y el metodo: GET no estan implementados"}
+{"level":40,"time":1680299436654,"pid":7456,"hostname":"DESKTOP-G8F9RK0","msg":"La URL: /api/ y el metodo: GET no estan implementados"}
