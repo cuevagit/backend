@@ -27,6 +27,8 @@ const io = new IOServer(httpServer)
 
 //Cors
 servidor.use(cors());
+
+//GraphQL
 servidor.use('/graphql', graphqlMiddleware)
 
 
