@@ -18,14 +18,14 @@ class ProductService {
     async listarProducto() {
         try {
                 const listadoProducts = await Products.listarProducto()
-                if(listadoProducts){
+                if(listadoProducts[0]){
                     const products = []
                     listadoProducts.forEach(d => {
                         products.push(d.datos())
                     });
                     return products
                 } else
-                    return null
+                    return {mensaje: "No hay productos"}
         } catch (error) {
             return error
         }
@@ -67,7 +67,7 @@ class ProductService {
             if(producto)
              return producto.datos()
             else 
-             return null
+             return {mensaje: `No existe el producto con el id: ${objeto._id}`}
         } catch (error) {
             return error
         }
